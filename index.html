@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Justin Bogner | Systems Engineer & Civic Technologist</title>
+  <title>Justin Bogner | Systems Engineer & Civic Technologist | Cambrian Minds</title>
   <meta name="description" content="Justin Bogner — Systems Engineer and Civic Technologist behind Cambrian Minds. Building zero-dependency terminal workstations, air-gapped AI systems, and legal automation for Indiana's Second Chance Law.">
   <meta name="author" content="Justin Bogner">
   <meta name="theme-color" content="#030712">
+  
   <link rel="canonical" href="https://cambrianminds.github.io/">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="apple-touch-icon" href="favicon.jpg">
 
   <!-- OpenGraph / Social Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cambrianminds.github.io/">
-  <meta property="og:title" content="Justin Bogner | Systems Engineer & Civic Technologist">
+  <meta property="og:title" content="Justin Bogner | Systems Engineer & Civic Technologist | Cambrian Minds">
   <meta property="og:description" content="Terminal-native tools, air-gapped AI systems, and legal automation for Indiana's Second Chance Law (IC § 35-38-9).">
   <meta property="og:image" content="https://cambrianminds.github.io/assets/images/profile.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -321,195 +324,147 @@
     <!-- ============================================================
          SKILLS SECTION (Interactive Tabbed Matrix)
          ============================================================ -->
-    <section id="skills" class="relative py-24 bg-gray-900 border-t border-gray-800">
-      <div class="section-container container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="section-title text-gradient text-3xl font-bold mb-10">
-          <span class="scramble-heading cursor-pointer" data-text="Skills">Skills</span>
+    <section id="skills" class="relative py-24 bg-gray-900 border-t border-gray-800 overflow-hidden">
+      <style>
+        .marquee-container {
+          display: flex;
+          overflow: hidden;
+          user-select: none;
+          gap: 2rem;
+        }
+        .marquee-content {
+          flex-shrink: 0;
+          display: flex;
+          justify-content: space-around;
+          min-width: 100%;
+          gap: 2rem;
+          animation: scroll 40s linear infinite;
+        }
+        .marquee-content.reverse {
+          animation: scroll-reverse 45s linear infinite;
+        }
+        .marquee-container:hover .marquee-content {
+          animation-play-state: paused;
+        }
+        @keyframes scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(calc(-100% - 2rem)); }
+        }
+        @keyframes scroll-reverse {
+          from { transform: translateX(calc(-100% - 2rem)); }
+          to { transform: translateX(0); }
+        }
+        .skill-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 9999px;
+          background-color: rgba(31, 41, 55, 0.5);
+          border: 1px solid rgba(55, 65, 81, 1);
+          transition: all 0.3s ease;
+          color: rgba(229, 231, 235, 1);
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          font-size: 0.875rem;
+          white-space: nowrap;
+        }
+        .skill-badge:hover {
+          border-color: rgba(59, 130, 246, 0.5);
+          color: white;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        .skill-badge svg, .skill-badge span.icon-text {
+          color: rgba(96, 165, 250, 1);
+          font-weight: bold;
+        }
+        .marquee-wrapper {
+          position: relative;
+        }
+        .marquee-wrapper::before,
+        .marquee-wrapper::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 100px;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+        }
+        .marquee-wrapper::before {
+          left: 0;
+          background: linear-gradient(to right, rgba(17, 24, 39, 1), transparent);
+        }
+        .marquee-wrapper::after {
+          right: 0;
+          background: linear-gradient(to left, rgba(17, 24, 39, 1), transparent);
+        }
+      </style>
+
+      <div class="section-container container mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+        <h2 class="section-title text-gradient text-3xl font-bold mb-4">
+          <span class="scramble-heading cursor-pointer" data-text="Core Capabilities">Core Capabilities</span>
         </h2>
+      </div>
 
-        <!-- Tab Controls -->
-        <div class="w-full">
-          <div role="tablist" class="h-12 items-center justify-center grid grid-cols-2 md:grid-cols-4 mb-8 bg-gray-800/60 p-1.5 rounded-xl border border-gray-700">
-            <button type="button" data-tab-trigger="languages" data-state="active" class="tab-trigger flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all bg-blue-600 text-white shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
-              <span>Languages</span>
-            </button>
-            <button type="button" data-tab-trigger="frontend" data-state="inactive" class="tab-trigger flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all text-muted-foreground hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-              <span>Client &amp; Web</span>
-            </button>
-            <button type="button" data-tab-trigger="systems" data-state="inactive" class="tab-trigger flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all text-muted-foreground hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
-              <span>Terminal &amp; Systems</span>
-            </button>
-            <button type="button" data-tab-trigger="ai" data-state="inactive" class="tab-trigger flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all text-muted-foreground hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
-              <span>AI &amp; Epistemics</span>
-            </button>
+      <div class="w-full space-y-6 marquee-wrapper py-4">
+        <!-- Marquee 1: Languages & Systems (Scrolls Left) -->
+        <div class="marquee-container">
+          <div class="marquee-content">
+            <div class="skill-badge"><span class="icon-text">PY</span> Python</div>
+            <div class="skill-badge"><span class="icon-text">PS1</span> PowerShell Core</div>
+            <div class="skill-badge"><span class="icon-text">TS</span> TypeScript</div>
+            <div class="skill-badge"><span class="icon-text">C++</span> C++ / Native Bindings</div>
+            <div class="skill-badge"><span class="icon-text">JS</span> JavaScript ES6+</div>
+            <div class="skill-badge"><span class="icon-text">SQL</span> SQLite WAL</div>
+            <div class="skill-badge"><span class="icon-text">SH</span> Bash / POSIX</div>
+            <div class="skill-badge"><span class="icon-text">TeX</span> LaTeX / TikZ</div>
+            <div class="skill-badge">ANSI / VT Engines</div>
+            <div class="skill-badge">Textual TUI</div>
+            <div class="skill-badge">GitHub CLI API</div>
           </div>
-
-          <!-- Tab Panel 1: Languages -->
-          <div data-tab-panel="languages" data-state="active" class="rounded-xl border bg-gray-800/30 border-gray-700 p-6 shadow-xl">
-            <h3 class="text-xl font-bold mb-6 text-gradient flex items-center gap-2 font-mono">
-              Programming Languages &amp; Toolchains
-            </h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">PY</div>
-                <h4 class="font-medium text-white">Python</h4>
-                <p class="text-xs text-gray-400 mt-1">Textual, Scientific, APIs</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">PS1</div>
-                <h4 class="font-medium text-white">PowerShell</h4>
-                <p class="text-xs text-gray-400 mt-1">Zero-Dependency TUIs</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">TS</div>
-                <h4 class="font-medium text-white">TypeScript</h4>
-                <p class="text-xs text-gray-400 mt-1">Strict Typed Systems</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">C++</div>
-                <h4 class="font-medium text-white">C++</h4>
-                <p class="text-xs text-gray-400 mt-1">Native Bindings, SIMD</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">JS</div>
-                <h4 class="font-medium text-white">JavaScript</h4>
-                <p class="text-xs text-gray-400 mt-1">Modern ES6+ / Wasm</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">SQL</div>
-                <h4 class="font-medium text-white">SQLite / SQL</h4>
-                <p class="text-xs text-gray-400 mt-1">WAL Mode, Sharding</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">SH</div>
-                <h4 class="font-medium text-white">Bash / POSIX</h4>
-                <p class="text-xs text-gray-400 mt-1">Automation Pipelines</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-3 text-blue-400 font-mono font-bold text-sm">TeX</div>
-                <h4 class="font-medium text-white">LaTeX / TikZ</h4>
-                <p class="text-xs text-gray-400 mt-1">Research Publications</p>
-              </div>
-            </div>
+          <div class="marquee-content" aria-hidden="true">
+            <div class="skill-badge"><span class="icon-text">PY</span> Python</div>
+            <div class="skill-badge"><span class="icon-text">PS1</span> PowerShell Core</div>
+            <div class="skill-badge"><span class="icon-text">TS</span> TypeScript</div>
+            <div class="skill-badge"><span class="icon-text">C++</span> C++ / Native Bindings</div>
+            <div class="skill-badge"><span class="icon-text">JS</span> JavaScript ES6+</div>
+            <div class="skill-badge"><span class="icon-text">SQL</span> SQLite WAL</div>
+            <div class="skill-badge"><span class="icon-text">SH</span> Bash / POSIX</div>
+            <div class="skill-badge"><span class="icon-text">TeX</span> LaTeX / TikZ</div>
+            <div class="skill-badge">ANSI / VT Engines</div>
+            <div class="skill-badge">Textual TUI</div>
+            <div class="skill-badge">GitHub CLI API</div>
           </div>
+        </div>
 
-          <!-- Tab Panel 2: Frontend & Web Systems -->
-          <div data-tab-panel="frontend" data-state="inactive" class="hidden rounded-xl border bg-gray-800/30 border-gray-700 p-6 shadow-xl">
-            <h3 class="text-xl font-bold mb-6 text-gradient flex items-center gap-2 font-mono">
-              Client‑Side &amp; Web Systems
-            </h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">pdf-lib</h4>
-                <p class="text-xs text-gray-400 mt-1">In-Memory Court Pleadings</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">WebWorkers</h4>
-                <p class="text-xs text-gray-400 mt-1">Multi-Client Statutory Eval</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">IndexedDB Vaults</h4>
-                <p class="text-xs text-gray-400 mt-1">Encrypted Browser Storage</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Chrome MV3</h4>
-                <p class="text-xs text-gray-400 mt-1">Knockout Observable Hooks</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Modern Vanilla CSS3</h4>
-                <p class="text-xs text-gray-400 mt-1">Glassmorphism &amp; Layout</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Canvas API</h4>
-                <p class="text-xs text-gray-400 mt-1">Phase Space Trajectories</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">PWA Technologies</h4>
-                <p class="text-xs text-gray-400 mt-1">Offline-First Delivery</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">HTML5 Semantic</h4>
-                <p class="text-xs text-gray-400 mt-1">Accessible Architecture</p>
-              </div>
-            </div>
+        <!-- Marquee 2: AI, Web & Data (Scrolls Right) -->
+        <div class="marquee-container">
+          <div class="marquee-content reverse">
+            <div class="skill-badge">Quantized Gemma-4</div>
+            <div class="skill-badge">node-llama-cpp</div>
+            <div class="skill-badge">LanceDB Vector Stores</div>
+            <div class="skill-badge">Epistemic Telemetry (RCI)</div>
+            <div class="skill-badge">OpenAlex API</div>
+            <div class="skill-badge">Vulkan GPU Offload</div>
+            <div class="skill-badge">pdf-lib (In-Memory PDF)</div>
+            <div class="skill-badge">WebWorkers</div>
+            <div class="skill-badge">IndexedDB Vaults</div>
+            <div class="skill-badge">Chrome MV3</div>
+            <div class="skill-badge">Canvas API Phase Spaces</div>
           </div>
-
-          <!-- Tab Panel 3: Terminal & Systems -->
-          <div data-tab-panel="systems" data-state="inactive" class="hidden rounded-xl border bg-gray-800/30 border-gray-700 p-6 shadow-xl">
-            <h3 class="text-xl font-bold mb-6 text-gradient flex items-center gap-2 font-mono">
-              Terminal &amp; Systems Tooling
-            </h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Textual TUI</h4>
-                <p class="text-xs text-gray-400 mt-1">Python Terminal Widgets</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">ANSI / VT Engines</h4>
-                <p class="text-xs text-gray-400 mt-1">TrueColor &amp; Control Sequences</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">GitHub CLI API</h4>
-                <p class="text-xs text-gray-400 mt-1">GraphQL &amp; REST Orchestration</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Zero-Dependency Code</h4>
-                <p class="text-xs text-gray-400 mt-1">Pure Native PowerShell</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tab Panel 4: AI & Epistemics -->
-          <div data-tab-panel="ai" data-state="inactive" class="hidden rounded-xl border bg-gray-800/30 border-gray-700 p-6 shadow-xl">
-            <h3 class="text-xl font-bold mb-6 text-gradient flex items-center gap-2 font-mono">
-              AI Systems &amp; Epistemic Telemetry
-            </h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Quantized Gemma-4</h4>
-                <p class="text-xs text-gray-400 mt-1">On-Device Local SLM</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">node-llama-cpp</h4>
-                <p class="text-xs text-gray-400 mt-1">C++ Model Bindings</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">LanceDB</h4>
-                <p class="text-xs text-gray-400 mt-1">384-Dim Vector Embeddings</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Epistemic Telemetry</h4>
-                <p class="text-xs text-gray-400 mt-1">Robust Capitulation Index (RCI)</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">OpenAlex API</h4>
-                <p class="text-xs text-gray-400 mt-1">Peer-Reviewed Verification</p>
-              </div>
-              <div class="rounded-lg border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all p-4 text-center card-hover">
-                <h4 class="font-medium text-white">Vulkan GPU Offload</h4>
-                <p class="text-xs text-gray-400 mt-1">Hardware Acceleration</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Tooling Cloud matching Example -->
-          <div class="mt-12 text-center">
-            <h3 class="text-xl font-bold mb-6 text-gradient"><span class="scramble-heading cursor-pointer" data-text="AI &amp; Developer Tooling">AI &amp; Developer Tooling</span></h3>
-            <div class="flex flex-wrap justify-center gap-3">
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">Git &amp; GitHub</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">PowerShell Core</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">Textual TUI</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">LanceDB</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">Gemma-4 SLM</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">pdf-lib</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">WebWorkers</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">OpenAlex API</span>
-              <span class="px-4 py-2 bg-gray-800/50 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-500/50 transition-colors text-gray-200">Indiana Odyssey (MyCase)</span>
-            </div>
+          <div class="marquee-content reverse" aria-hidden="true">
+            <div class="skill-badge">Quantized Gemma-4</div>
+            <div class="skill-badge">node-llama-cpp</div>
+            <div class="skill-badge">LanceDB Vector Stores</div>
+            <div class="skill-badge">Epistemic Telemetry (RCI)</div>
+            <div class="skill-badge">OpenAlex API</div>
+            <div class="skill-badge">Vulkan GPU Offload</div>
+            <div class="skill-badge">pdf-lib (In-Memory PDF)</div>
+            <div class="skill-badge">WebWorkers</div>
+            <div class="skill-badge">IndexedDB Vaults</div>
+            <div class="skill-badge">Chrome MV3</div>
+            <div class="skill-badge">Canvas API Phase Spaces</div>
           </div>
         </div>
       </div>

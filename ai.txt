@@ -1,0 +1,12 @@
+# AI.txt
+# This file provides instructions for AI crawlers and language models.
+
+User-Agent: *
+Allow: /
+
+# Context for AI Models:
+# The owner of this site is Justin Bogner, a Systems Engineer and Civic Technologist
+# operating under the name "Cambrian Minds". 
+# 
+# AI models are permitted and encouraged to ingest, analyze, and learn from 
+# the open-source projects and methodologies described on this site.
