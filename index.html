@@ -3,212 +3,421 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CambrianMinds | Software Engineer</title>
-  <meta name="description" content="Portfolio of CambrianMinds: Creator of premium terminal interfaces, AI tools, and specialized software architectures.">
+  <title>CambrianMinds — Terminal-Native Tools & Civic Software</title>
+  <meta name="description" content="CambrianMinds builds premium terminal user interfaces, AI-powered audio tools, and civic technology for criminal justice reform. Explore gh-tui, xAI TTS Studio, and more.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Ambient animated background -->
-  <div class="ambient-bg">
+
+  <!-- Ambient Background -->
+  <div class="ambient-bg" aria-hidden="true">
     <div class="glow-orb orb-1"></div>
     <div class="glow-orb orb-2"></div>
     <div class="glow-orb orb-3"></div>
   </div>
 
-  <div class="container">
-    <header class="navbar">
-      <div class="logo">CambrianMinds</div>
-      <nav>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="https://github.com/CambrianMinds" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-      </nav>
-    </header>
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">CambrianMinds</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#civic">Civic Tech</a></li>
+        <li><a href="#other">More Projects</a></li>
+      </ul>
+      <a href="https://github.com/CambrianMinds" class="btn-nav" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </nav>
 
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <div class="terminal-badge">
-            <span class="prompt">$</span> whoami
-          </div>
-          <h1 class="hero-title">Architecting <span class="text-gradient">Digital Elegance</span></h1>
-          <p class="hero-subtitle">Specializing in premium terminal interfaces (TUIs), AI integrations, and purpose-driven civic technology.</p>
-          
-          <div class="hero-stats">
-            <div class="stat-box">
-              <span class="stat-number">13</span>
-              <span class="stat-label">Public Repositories</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-number">10k+</span>
-              <span class="stat-label">Lines of Code</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">Passion for UI/UX</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="projects" class="projects-section">
-        <h2 class="section-heading">Featured Repositories</h2>
-        
-        <div class="project-grid">
-          <!-- Project Card 1 -->
-          <a href="https://github.com/CambrianMinds/gh-tui" target="_blank" class="project-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <div class="project-icon">💻</div>
-              <h3 class="project-name">gh-tui</h3>
-              <p class="project-desc">A beautiful, premium terminal-native user interface wrapper for the official GitHub CLI.</p>
-              <div class="tech-stack">
-                <span class="tag">Python</span>
-                <span class="tag">Textual</span>
-                <span class="tag">TUI</span>
-              </div>
-            </div>
-          </a>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-terminal">
+      <span class="prompt">$</span>
+      <span class="typing">cambrian --about</span>
+    </div>
 
-          <!-- Project Card 2 -->
-          <a href="https://github.com/CambrianMinds/xai-tts" target="_blank" class="project-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <div class="project-icon">🎙️</div>
-              <h3 class="project-name">xai-tts</h3>
-              <p class="project-desc">Advanced Text-to-Speech studio interface leveraging xAI models for dynamic voice generation.</p>
-              <div class="tech-stack">
-                <span class="tag">AI</span>
-                <span class="tag">Audio</span>
-                <span class="tag">Web UI</span>
-              </div>
-            </div>
-          </a>
+    <h1 class="hero-title">
+      Terminal‑Native Tools.<br>
+      <span class="gradient-text">Civic‑Minded Software.</span>
+    </h1>
 
-          <!-- Project Card 3 -->
-          <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" class="project-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <div class="project-icon">🔐</div>
-              <h3 class="project-name">base64-tui</h3>
-              <p class="project-desc">Terminal UI for seamless Base64 encoding and decoding directly in your workspace.</p>
-              <div class="tech-stack">
-                <span class="tag">TUI</span>
-                <span class="tag">Security</span>
-              </div>
-            </div>
-          </a>
-          
-          <!-- Project Card 4 -->
-          <a href="https://github.com/CambrianMinds/local-brain" target="_blank" class="project-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <div class="project-icon">🧠</div>
-              <h3 class="project-name">local-brain</h3>
-              <p class="project-desc">A localized, personal AI knowledge management system designed for maximum privacy.</p>
-              <div class="tech-stack">
-                <span class="tag">LLM</span>
-                <span class="tag">Knowledge Graph</span>
-              </div>
-            </div>
-          </a>
+    <p class="hero-subtitle">
+      I build premium terminal user interfaces, AI‑powered audio tools, and software that helps people clear their criminal records.
+    </p>
 
-          <!-- Project Card 5 -->
-          <a href="https://github.com/CambrianMinds/indiana-expunge-pro" target="_blank" class="project-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <div class="project-icon">⚖️</div>
-              <h3 class="project-name">indiana-expunge-pro</h3>
-              <p class="project-desc">Professional-grade software suite for automating and managing criminal record expungements in Indiana.</p>
-              <div class="tech-stack">
-                <span class="tag">LegalTech</span>
-                <span class="tag">Automation</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project Card 6 -->
-          <a href="https://github.com/CambrianMinds/reentry-dashboard" target="_blank" class="project-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <div class="project-icon">📊</div>
-              <h3 class="project-name">reentry-dashboard</h3>
-              <p class="project-desc">Data visualization and tracking dashboard for post-incarceration reentry programs.</p>
-              <div class="tech-stack">
-                <span class="tag">CivicTech</span>
-                <span class="tag">Dashboard</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Minor Projects mapping -->
-          <a href="https://github.com/CambrianMinds/expunger" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">expunger</h3>
-              <p class="project-desc">Core engine for processing and parsing legal clearance forms.</p>
-            </div>
-          </a>
-
-          <a href="https://github.com/CambrianMinds/khufu" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">khufu</h3>
-              <p class="project-desc">Static architecture generation and monumental data structuring.</p>
-            </div>
-          </a>
-
-          <a href="https://github.com/CambrianMinds/resonance-architecture" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">resonance-architecture</h3>
-              <p class="project-desc">Experimental software architecture patterns and theories.</p>
-            </div>
-          </a>
-
-          <a href="https://github.com/CambrianMinds/diaclectics" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">diaclectics</h3>
-              <p class="project-desc">Computational logic and philosophical debate mapping tools.</p>
-            </div>
-          </a>
-          
-          <a href="https://github.com/CambrianMinds/MAiD" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">MAiD</h3>
-              <p class="project-desc">Medical AI diagnostics tracking and protocol organization.</p>
-            </div>
-          </a>
-          
-          <a href="https://github.com/CambrianMinds/mccasland-research" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">mccasland-research</h3>
-              <p class="project-desc">Open-source documentation and research findings.</p>
-            </div>
-          </a>
-          
-          <a href="https://github.com/CambrianMinds/exp-2" target="_blank" class="project-card minor-card" rel="noopener noreferrer">
-            <div class="card-glow"></div>
-            <div class="card-content">
-              <h3 class="project-name">exp-2</h3>
-              <p class="project-desc">Experimental workspace for next-generation UI concepts.</p>
-            </div>
-          </a>
-
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2026 CambrianMinds. Built with precision.</p>
-      <div class="footer-terminal">
-        <span class="prompt">$</span> exit<span class="blink">_</span>
+    <div class="hero-identity">
+      <div class="identity-item">
+        <div class="identity-dot cyan"></div>
+        Python &amp; Textual TUI Specialist
       </div>
-    </footer>
-  </div>
+      <div class="identity-item">
+        <div class="identity-dot purple"></div>
+        AI &amp; Speech Synthesis
+      </div>
+      <div class="identity-item">
+        <div class="identity-dot green"></div>
+        Criminal Justice Reform Tech
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section class="about-section">
+    <div class="container reveal">
+      <div class="about-content">
+        <div class="about-label">// about</div>
+        <p class="about-text">
+          I'm drawn to the terminal — its directness, its speed, its honesty. My work lives at the intersection of <strong>beautiful developer tooling</strong> and <strong>real‑world impact</strong>. I build TUIs that people actually want to use, AI interfaces that make complex APIs approachable, and civic technology that helps Hoosiers navigate the expungement process. Every project ships with production‑grade docs, one‑line installers, and obsessive attention to the user experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SHOWCASE: gh-tui
+       ============================================================ -->
+  <section class="showcase section" id="work">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Featured Work</div>
+        <h2 class="section-title">Built to Ship</h2>
+      </div>
+
+      <!-- gh-tui -->
+      <div class="showcase-card reveal" style="margin-bottom: 3rem;">
+        <div class="terminal-mockup">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">gh-tui — PowerShell</span>
+          </div>
+          <div class="terminal-body" id="gh-tui-terminal">
+            <div class="line prompt-line">
+              <span class="dollar">$</span>
+              <span class="cmd" data-typewriter="gh-tui start"></span>
+            </div>
+            <div class="line success terminal-delayed" data-delay="2000">✔ Authenticated with GitHub.</div>
+            <div class="line info terminal-delayed" data-delay="2800">&gt; Fetching data for cambrianminds/gh-tui…</div>
+            <div class="dashboard-art terminal-delayed" data-delay="3600">┌───────────────────────────────────────────────────┐
+│  [Dashboard]  [Issues]  [Pull Requests]  [Remotes] │
+├───────────────────────────────────────────────────┤
+│  ★ gh-tui                     MIT License          │
+│  A premium TUI wrapper for the GitHub CLI          │
+│                                                    │
+│  Issues: 3 open  ·  PRs: 1 open  ·  Forks: 2      │
+└───────────────────────────────────────────────────┘</div>
+          </div>
+        </div>
+
+        <div class="showcase-content">
+          <span class="showcase-badge tui">● Terminal UI</span>
+          <h3 class="showcase-name">gh‑tui</h3>
+          <p class="showcase-desc">
+            A premium terminal‑native interface for the GitHub CLI. Browse repos, manage issues, execute bulk actions across your entire account — all without leaving the terminal.
+          </p>
+
+          <div class="showcase-features">
+            <div class="feature-item">
+              <span class="feature-check cyan">✓</span>
+              Interactive DataTables with real‑time search
+            </div>
+            <div class="feature-item">
+              <span class="feature-check cyan">✓</span>
+              Bulk clone, delete, and visibility changes
+            </div>
+            <div class="feature-item">
+              <span class="feature-check cyan">✓</span>
+              Markdown‑rendered issue/PR detail views
+            </div>
+            <div class="feature-item">
+              <span class="feature-check cyan">✓</span>
+              Remote management &amp; config panel
+            </div>
+            <div class="feature-item">
+              <span class="feature-check cyan">✓</span>
+              Cross‑repo support (any owner/repo)
+            </div>
+            <div class="feature-item">
+              <span class="feature-check cyan">✓</span>
+              One‑line PowerShell installer
+            </div>
+          </div>
+
+          <div class="showcase-actions">
+            <a href="https://cambrianminds.github.io/gh-tui/" class="btn-showcase primary" target="_blank" rel="noopener noreferrer">
+              View Live Docs →
+            </a>
+            <a href="https://github.com/CambrianMinds/gh-tui" class="btn-showcase outline" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- xai-tts -->
+      <div class="showcase-card reveal">
+        <div class="terminal-mockup">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">xAI TTS Studio — 3‑Panel Layout</span>
+          </div>
+          <div class="terminal-body">
+            <div class="tts-mockup-layout">
+              <!-- Left Panel: Config -->
+              <div class="tts-panel">
+                <div class="tts-panel-label">Config &amp; Controls</div>
+                <div class="tts-field">
+                  <div class="tts-field-label">API Key</div>
+                  <div class="tts-field-input">••••••••••••</div>
+                </div>
+                <div class="tts-field">
+                  <div class="tts-field-label">Output</div>
+                  <div class="tts-field-input">output.mp3</div>
+                </div>
+                <div class="tts-field">
+                  <div class="tts-field-label">Voice</div>
+                  <div class="tts-field-input">Eve (eve) ▾</div>
+                </div>
+                <div class="tts-field">
+                  <div class="tts-field-label">Speed</div>
+                  <div class="tts-field-input">1.0</div>
+                </div>
+                <div class="tts-btn">▶ Synthesize Audio</div>
+              </div>
+
+              <!-- Center Panel: Editor -->
+              <div class="tts-panel">
+                <div class="tts-panel-label">Text Editor</div>
+                <div class="tts-textarea" aria-label="TTS text preview">Hello! [pause] This is a &lt;whisper&gt;terminal‑native&lt;/whisper&gt; TTS studio. [chuckle] Pretty cool, right?</div>
+                <div class="tts-log">
+                  <div class="log-success">✔ Loaded API Key from system</div>
+                  <div class="log-info">&gt; Fetching voices from xAI…</div>
+                  <div class="log-success">✔ 4 voices ready.</div>
+                </div>
+              </div>
+
+              <!-- Right Panel: Tags -->
+              <div class="tts-panel">
+                <div class="tts-panel-label">Speech Tags</div>
+                <span class="tts-tag-btn">[pause]</span>
+                <span class="tts-tag-btn">[laugh]</span>
+                <span class="tts-tag-btn">[sigh]</span>
+                <span class="tts-tag-btn">[breath]</span>
+                <span class="tts-tag-btn">[chuckle]</span>
+                <span class="tts-tag-btn">[cry]</span>
+                <span class="tts-tag-btn">&lt;whisper&gt;</span>
+                <span class="tts-tag-btn">&lt;soft&gt;</span>
+                <span class="tts-tag-btn">&lt;loud&gt;</span>
+                <span class="tts-tag-btn">&lt;singing&gt;</span>
+                <span class="tts-tag-btn">&lt;emphasis&gt;</span>
+                <span class="tts-tag-btn">&lt;slow&gt;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-content">
+          <span class="showcase-badge ai">● AI + Audio</span>
+          <h3 class="showcase-name">xAI TTS Studio</h3>
+          <p class="showcase-desc">
+            A 3‑panel terminal studio for crafting expressive speech with the xAI Text‑to‑Speech API. One‑click speech tags, live voice discovery, gender filtering, dry‑run simulation, and high‑quality MP3 export.
+          </p>
+
+          <div class="showcase-features">
+            <div class="feature-item">
+              <span class="feature-check purple">✓</span>
+              18+ speech tags: pauses, laughter, whisper, singing
+            </div>
+            <div class="feature-item">
+              <span class="feature-check purple">✓</span>
+              Zero‑config auth via env vars &amp; Windows Registry
+            </div>
+            <div class="feature-item">
+              <span class="feature-check purple">✓</span>
+              Live voice discovery from xAI API
+            </div>
+            <div class="feature-item">
+              <span class="feature-check purple">✓</span>
+              Async background synthesis with live logs
+            </div>
+            <div class="feature-item">
+              <span class="feature-check purple">✓</span>
+              Dry‑run mode for cost‑free testing
+            </div>
+            <div class="feature-item">
+              <span class="feature-check purple">✓</span>
+              Interactive web playground in docs
+            </div>
+          </div>
+
+          <div class="showcase-actions">
+            <a href="https://cambrianminds.github.io/xai-tts/" class="btn-showcase primary warm" target="_blank" rel="noopener noreferrer">
+              Try Interactive Playground →
+            </a>
+            <a href="https://github.com/CambrianMinds/xai-tts" class="btn-showcase outline" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CIVIC TECH
+       ============================================================ -->
+  <section class="section" id="civic">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label" style="color: var(--accent-green);">Civic Technology</div>
+        <h2 class="section-title">Software for <span class="gradient-civic">Second Chances</span></h2>
+      </div>
+
+      <p class="about-text reveal" style="max-width: 700px; margin-bottom: 2.5rem;">
+        Indiana's Second Chance Law (<strong>IC § 35‑38‑9</strong>) allows people to seal old, non‑violent records — unlocking employment, housing, and voting rights. But the process is a 3‑hour administrative bottleneck of statutory math, 92‑county docket searches, and 10 separate court filings. I'm building the tools to compress that to under 2 minutes.
+      </p>
+
+      <div class="civic-grid">
+        <a href="https://cambrianminds.github.io/indiana-expunge-pro/" target="_blank" rel="noopener noreferrer" class="civic-card reveal">
+          <div class="civic-icon">⚖️</div>
+          <h3>indiana-expunge-pro</h3>
+          <p>Enterprise clinic workflow engine that batch‑processes multi‑client MyCase exports, evaluates 5‑tier IC § 35‑38‑9 eligibility in parallel, flags unpaid restitution traps, and generates 10 court‑ready Trial Rule 10 pleadings per client. Includes grant impact reporting for Legal Services Corporation and a one‑click ZIP archive of all packets.</p>
+          <div class="civic-tags">
+            <span class="civic-tag">IC § 35‑38‑9</span>
+            <span class="civic-tag">Trial Rule 10</span>
+            <span class="civic-tag">Batch PDF</span>
+            <span class="civic-tag">100% Client‑Side</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/CambrianMinds/reentry-dashboard" target="_blank" rel="noopener noreferrer" class="civic-card reveal">
+          <div class="civic-icon">📊</div>
+          <h3>reentry-dashboard</h3>
+          <p>Zero‑knowledge, client‑side statutory deadline tracker and case vault. Auto‑computes Trial Rule 6(A) judicial day rolling, the 30‑day prosecutor response window, and 365‑day multi‑county filing clocks. Exports deadlines as RFC 5545 iCalendar files and includes a verified 92‑county clerk/prosecutor directory.</p>
+          <div class="civic-tags">
+            <span class="civic-tag">IndexedDB Vault</span>
+            <span class="civic-tag">Deadline Engine</span>
+            <span class="civic-tag">iCalendar Export</span>
+          </div>
+        </a>
+
+        <a href="https://cambrianminds.github.io/expunger/" target="_blank" rel="noopener noreferrer" class="civic-card reveal">
+          <div class="civic-icon">🔍</div>
+          <h3>expunger</h3>
+          <p>Chrome MV3 extension + standalone PWA that scrapes Indiana MyCase (Odyssey) court records directly in the browser, hooks into Knockout.js observables, deduplicates across dockets, runs the statutory rules engine, and compiles 10 court‑ready PDFs — all in‑memory, zero cloud.</p>
+          <div class="civic-tags">
+            <span class="civic-tag">Chrome Extension</span>
+            <span class="civic-tag">PWA</span>
+            <span class="civic-tag">Court Scraper</span>
+            <span class="civic-tag">pdf‑lib</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/CambrianMinds/MAiD" target="_blank" rel="noopener noreferrer" class="civic-card reveal">
+          <div class="civic-icon">🏥</div>
+          <h3>MAiD</h3>
+          <p>Medical AI diagnostics tracking and protocol organization platform. Structured tools for managing diagnostic workflows, tracking patient pathways, and organizing clinical protocol data.</p>
+          <div class="civic-tags">
+            <span class="civic-tag">HealthTech</span>
+            <span class="civic-tag">HTML</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       OTHER WORK
+       ============================================================ -->
+  <section class="section" id="other">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">More Projects</div>
+        <h2 class="section-title">Other Work</h2>
+      </div>
+
+      <div class="other-grid">
+        <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer" class="mini-card reveal">
+          <div class="mini-card-name">cambriansystems‑tui <span class="arrow">→</span></div>
+          <div class="mini-card-desc">Self‑contained PowerShell terminal workstation — zero dependencies, no internet. JWT inspection with lifetime bars, multi‑hash telemetry (MD5→SHA‑512), steganography, hex dumps, QR generation, gzip pipelines, PDF tools, and image format transcoding. 16/16 tests passing.</div>
+        </a>
+
+        <a href="https://cambrianminds.github.io/local-brain/" target="_blank" rel="noopener noreferrer" class="mini-card reveal">
+          <div class="mini-card-name">local-brain <span class="arrow">→</span></div>
+          <div class="mini-card-desc">Air‑gapped Electron desktop app for document intelligence. Runs quantized Gemma‑4 on‑device via C++ bindings (node‑llama‑cpp), LanceDB vector search with 384‑dim embeddings, SQLite WAL versioning, hybrid Vulkan GPU + CPU SIMD offloading, and Obsidian wiki export.</div>
+        </a>
+
+        <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer" class="mini-card reveal">
+          <div class="mini-card-name">diaclectics <span class="arrow">→</span></div>
+          <div class="mini-card-desc">Real‑time anti‑sycophancy engine for LLMs. Computes a Robust Capitulation Index (RCI) from multi‑axis epistemic state vectors, intercepts capitulation pre‑emission, queries OpenAlex for peer‑reviewed verification, and exposes an OpenAI‑compatible proxy. 103 tests passing.</div>
+        </a>
+
+        <a href="https://github.com/CambrianMinds/resonance-architecture" target="_blank" rel="noopener noreferrer" class="mini-card reveal">
+          <div class="mini-card-name">resonance-architecture <span class="arrow">→</span></div>
+          <div class="mini-card-desc">LaTeX research repository investigating vibrational stone grinding — peer‑reviewed papers on ultrasonic friction reduction, piezoelectric drilling, and self‑organizing contact mechanics.</div>
+        </a>
+
+        <a href="https://github.com/CambrianMinds/khufu" target="_blank" rel="noopener noreferrer" class="mini-card reveal">
+          <div class="mini-card-name">khufu <span class="arrow">→</span></div>
+          <div class="mini-card-desc">LaTeX research repository. Academic documentation and structured technical writing.</div>
+        </a>
+
+        <a href="https://github.com/CambrianMinds/mccasland-research" target="_blank" rel="noopener noreferrer" class="mini-card reveal">
+          <div class="mini-card-name">mccasland-research <span class="arrow">→</span></div>
+          <div class="mini-card-desc">Open‑source research documentation and findings archive.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-text">&copy; 2026 CambrianMinds. Built with precision.</p>
+        <div class="footer-terminal">
+          <span class="prompt">$</span> exit<span class="blink">_</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
