@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>diaclectics | Case Study | Cambrian Minds</title>
+  <meta name="description" content="Case study for diaclectics: a real-time anti-sycophancy and epistemic telemetry engine for frontier AI models, computing the Robust Capitulation Index (RCI).">
+  <meta name="author" content="Justin Bogner">
+  <link rel="canonical" href="https://cambrianminds.github.io/case-studies/diaclectics.html">
+  <link rel="icon" type="image/jpeg" href="../favicon.webp">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="diaclectics | Case Study | Cambrian Minds">
+  <meta property="og:description" content="Real-time anti-sycophancy engine computing the Robust Capitulation Index for frontier AI models.">
+  <meta property="og:image" content="https://cambrianminds.github.io/assets/images/diaclectics.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .case-study-hero {
+      background: radial-gradient(ellipse at top, rgb(3, 105, 161) 0%, rgb(15, 23, 42) 40%, rgb(2, 6, 23) 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 6rem 1rem 4rem;
+    }
+    .accent-text { color: rgb(56, 189, 248); }
+    .accent-bar  { background: rgb(56, 189, 248); }
+    .accent-border { border-color: rgba(56, 189, 248, 0.4); }
+    .accent-bg { background: rgba(56, 189, 248, 0.06); }
+    .code-block {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    .code-block .kw  { color: #ff7b72; }
+    .code-block .fn  { color: #d2a8ff; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .cm  { color: #8b949e; }
+    .code-block .num { color: #79c0ff; }
+    .stat-card {
+      background: rgba(31, 41, 55, 0.5);
+      border: 1px solid rgba(55, 65, 81, 1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-950 text-white">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-3 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        cd ../
+      </a>
+      <a href="../index.html"><img src="../cambrianminds-logo-dark.webp" alt="Cambrian Minds" class="h-8 w-auto rounded" loading="lazy"></a>
+      <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-sky-400 hover:text-white border border-sky-500/40 rounded-md px-3 py-1.5 transition-colors">
+        View Project ↗
+      </a>
+    </div>
+  </nav>
+
+  <header class="case-study-hero">
+    <div class="max-w-5xl mx-auto w-full">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-1 h-8 accent-bar rounded"></div>
+        <span class="text-xs font-mono text-sky-400 uppercase tracking-widest">Epistemic Telemetry · Applied AI Research</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">diaclectics</h1>
+      <p class="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl">Real-Time Anti-Sycophancy Engine for Frontier AI Models</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Python</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Epistemic Telemetry</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">OpenAlex API</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">OpenAI-Compatible Proxy</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Phase Space Modeling</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-16 space-y-20">
+
+    <section>
+      <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+        <img src="../assets/images/diaclectics.webp" alt="diaclectics phase space visualization" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-2xl font-bold mb-4 accent-text">The Problem: Sycophancy in AI</h2>
+        <div class="text-gray-300 space-y-4 leading-relaxed">
+          <p>Frontier AI models are trained on human feedback — which creates a dangerous failure mode: they learn to <em>agree</em> rather than to be <em>correct</em>. When a user pushes back on a model's answer, the model often capitulates — not because new evidence was presented, but because it's optimizing to reduce social friction.</p>
+          <p>This is known as <strong>sycophancy</strong>. In high-stakes domains (legal, medical, scientific), an AI system that changes its position based on user pressure rather than epistemic merit is actively dangerous.</p>
+          <p><code class="text-sky-400 font-mono text-sm">diaclectics</code> is a drop-in proxy engine that intercepts AI model output in real time and measures this epistemic instability before it reaches the user.</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="stat-card accent-border border">
+          <div class="text-2xl font-bold accent-text mb-1">RCI</div>
+          <div class="text-sm text-gray-400">Robust Capitulation Index — quantifies ungrounded position changes</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-2xl font-bold accent-text mb-1">Phase Space</div>
+          <div class="text-sm text-gray-400">Multi-axis epistemic state vector modeling across conversation turns</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-2xl font-bold accent-text mb-1">OpenAlex</div>
+          <div class="text-sm text-gray-400">Peer-reviewed citation verification for factual claims</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-8 accent-text">How the RCI Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-sky-500/50 transition-colors">
+          <div class="text-2xl mb-3">📡</div>
+          <h3 class="font-bold text-white mb-2">1. State Vector Capture</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Each model response is decomposed into a multi-dimensional epistemic state vector: confidence axis, factual certainty, hedge density, and concession markers.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-sky-500/50 transition-colors">
+          <div class="text-2xl mb-3">📐</div>
+          <h3 class="font-bold text-white mb-2">2. Phase Space Trajectory</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">The engine tracks how the state vector moves across conversation turns. Large, abrupt trajectory shifts — without new evidence — are flagged as capitulation candidates.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-sky-500/50 transition-colors">
+          <div class="text-2xl mb-3">🚦</div>
+          <h3 class="font-bold text-white mb-2">3. RCI Tripwire Gate</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">If the computed RCI score exceeds a configurable threshold, the output is intercepted pre-emission and either blocked, flagged, or routed for citation verification via OpenAlex.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-6 accent-text">Implementation Detail: RCI Computation</h2>
+      <p class="text-gray-400 mb-4 text-sm">The Robust Capitulation Index is computed from a weighted combination of epistemic state delta vectors:</p>
+      <div class="code-block">
+<span class="cm"># Simplified RCI computation from the telemetry engine</span>
+<span class="kw">def</span> <span class="fn">compute_rci</span>(prev_state: EpistemicVector, curr_state: EpistemicVector) -> <span class="fn">float</span>:
+    <span class="str">"""
+    RCI = weighted norm of epistemic state delta
+    High RCI = large position shift without new evidence
+    """</span>
+    delta = curr_state - prev_state
+
+    <span class="cm"># Weight each axis by its capitulation-relevance</span>
+    weights = {
+        <span class="str">'confidence_delta'</span>:   <span class="num">0.35</span>,
+        <span class="str">'hedge_density_delta'</span>: <span class="num">0.25</span>,
+        <span class="str">'concession_score'</span>:   <span class="num">0.30</span>,
+        <span class="str">'evidence_citation'</span>:  -<span class="num">0.10</span>,  <span class="cm"># new citations reduce RCI</span>
+    }
+
+    rci = <span class="fn">sum</span>(
+        weights[axis] * <span class="fn">abs</span>(getattr(delta, axis))
+        <span class="kw">for</span> axis <span class="kw">in</span> weights
+    )
+
+    <span class="kw">return</span> <span class="fn">min</span>(rci, <span class="num">1.0</span>)   <span class="cm"># Normalized to [0, 1]</span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-8 accent-text">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-sky-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Drop-In OpenAI-Compatible Proxy</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Sits transparently between any OpenAI-compatible client and a model endpoint. Zero code changes required on the client side.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-sky-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Real-Time Pre-Emission Interception</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">RCI is computed and the tripwire is evaluated before the response is streamed to the user, enabling actual intervention rather than post-hoc logging.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-sky-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">OpenAlex Peer-Review Verification</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">When a model makes a specific factual claim, the engine can automatically query OpenAlex to check whether supporting peer-reviewed literature exists.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-sky-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Epistemic Phase Space Visualization</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">The engine outputs a Canvas-rendered phase space trajectory chart showing how the model's epistemic state evolved across the entire conversation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rounded-2xl border accent-border border p-8 text-center accent-bg">
+      <h2 class="text-2xl font-bold mb-3">Explore diaclectics</h2>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto text-sm">Full documentation, API reference, and the phase space visualizer are available on the project site.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-sky-700 hover:bg-sky-600 text-white font-semibold rounded-lg transition-colors">
+          View Project ↗
+        </a>
+        <a href="https://github.com/CambrianMinds/diaclectics" target="_blank" rel="noopener noreferrer" class="px-6 py-3 border border-gray-600 hover:border-white text-gray-300 hover:text-white font-semibold rounded-lg transition-colors">
+          GitHub Repository ↗
+        </a>
+        <a href="../index.html#projects" class="px-6 py-3 border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-gray-200 font-semibold rounded-lg transition-colors">
+          ← All Projects
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-sm font-mono">
+    <p>&copy; 2024–2026 Justin Bogner / Cambrian Minds</p>
+  </footer>
+</body>
+</html>

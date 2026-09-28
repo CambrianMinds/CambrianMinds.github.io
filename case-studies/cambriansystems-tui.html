@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cambriansystems-tui | Case Study | Cambrian Minds</title>
+  <meta name="description" content="Case study for cambriansystems-tui: a zero-dependency, air-gapped PowerShell terminal workstation for cryptographic token inspection, steganography, and phosphor QR code generation.">
+  <meta name="author" content="Justin Bogner">
+  <link rel="canonical" href="https://cambrianminds.github.io/case-studies/cambriansystems-tui.html">
+  <link rel="icon" type="image/jpeg" href="../favicon.webp">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="cambriansystems-tui | Case Study | Cambrian Minds">
+  <meta property="og:description" content="Zero-dependency air-gapped PowerShell terminal workstation.">
+  <meta property="og:image" content="https://cambrianminds.github.io/assets/images/base64-tui.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .case-study-hero {
+      background: radial-gradient(ellipse at top, rgb(14, 116, 144) 0%, rgb(15, 23, 42) 40%, rgb(2, 6, 23) 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 6rem 1rem 4rem;
+    }
+    .accent-text { color: rgb(34, 211, 238); }
+    .accent-bar  { background: rgb(34, 211, 238); }
+    .accent-border { border-color: rgba(34, 211, 238, 0.4); }
+    .accent-bg { background: rgba(34, 211, 238, 0.08); }
+    .code-block {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    .code-block .kw  { color: #ff7b72; }
+    .code-block .fn  { color: #d2a8ff; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .cm  { color: #8b949e; }
+    .code-block .num { color: #79c0ff; }
+    .stat-card {
+      background: rgba(31, 41, 55, 0.5);
+      border: 1px solid rgba(55, 65, 81, 1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-950 text-white">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-3 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        cd ../
+      </a>
+      <a href="../index.html"><img src="../cambrianminds-logo-dark.webp" alt="Cambrian Minds" class="h-8 w-auto rounded" loading="lazy"></a>
+      <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-cyan-400 hover:text-white border border-cyan-500/40 rounded-md px-3 py-1.5 transition-colors">
+        GitHub ↗
+      </a>
+    </div>
+  </nav>
+
+  <header class="case-study-hero">
+    <div class="max-w-5xl mx-auto w-full">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-1 h-8 accent-bar rounded"></div>
+        <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Terminal Engineering · Air-Gapped Systems</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">cambriansystems-tui</h1>
+      <p class="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl">Zero-Dependency PowerShell Terminal Workstation</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">PowerShell</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">VT/ANSI</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">JWT</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Zero-Deps</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Air-Gapped</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Cryptography</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-16 space-y-20">
+
+    <section>
+      <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+        <img src="../assets/images/base64-tui.webp" alt="cambriansystems-tui interface" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-2xl font-bold mb-4 accent-text">The Philosophy</h2>
+        <div class="text-gray-300 space-y-4 leading-relaxed">
+          <p>Most developer tooling is deeply coupled to the internet — package managers, cloud SDKs, external APIs. In enterprise environments, air-gapped networks, or sensitive security contexts, this is a fundamental problem.</p>
+          <p><code class="text-cyan-400 font-mono text-sm">cambriansystems-tui</code> is a proof-of-concept and production tool: a full-featured cryptographic workstation that ships as a single PowerShell script. No <code class="text-gray-400 font-mono text-sm">npm install</code>, no pip, no internet. Just copy and run.</p>
+          <p>It renders a full interactive TUI — panels, menus, ANSI TrueColor — using only the primitives available in every modern PowerShell environment.</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">1</div>
+          <div class="text-sm text-gray-400">Single .ps1 file — entire workstation</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">0</div>
+          <div class="text-sm text-gray-400">External dependencies — works fully offline</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">5+</div>
+          <div class="text-sm text-gray-400">Integrated cryptographic tools in one interface</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-8 accent-text">Built-In Tools</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-cyan-500/50 transition-colors">
+          <div class="text-2xl mb-3">🔑</div>
+          <h3 class="font-bold text-white mb-2">JWT Inspector</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Decodes corporate JWTs, parses all standard claims (exp, iat, aud), and renders a real-time lifetime meter — showing exactly how many minutes until token expiry.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-cyan-500/50 transition-colors">
+          <div class="text-2xl mb-3">#️⃣</div>
+          <h3 class="font-bold text-white mb-2">Multi-Hash Telemetry</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Computes MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes simultaneously for any input string or file blob, displayed in a comparative table.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-cyan-500/50 transition-colors">
+          <div class="text-2xl mb-3">🖼️</div>
+          <h3 class="font-bold text-white mb-2">Steganography Engine</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Encodes and decodes hidden payloads within Base64-encoded media. Implements a custom bit-manipulation scheme for covert data embedding.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-cyan-500/50 transition-colors">
+          <div class="text-2xl mb-3">🔢</div>
+          <h3 class="font-bold text-white mb-2">Hex Dump Viewer</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Classic hex + ASCII dual-column dump for any binary or text input, rendered directly in the terminal with offset markers.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-cyan-500/50 transition-colors">
+          <div class="text-2xl mb-3">⬛</div>
+          <h3 class="font-bold text-white mb-2">Phosphor QR Generator</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Generates scannable QR codes rendered entirely from Unicode block characters directly in the terminal window — no image file required.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-cyan-500/50 transition-colors">
+          <div class="text-2xl mb-3">🔄</div>
+          <h3 class="font-bold text-white mb-2">Base64 Codec</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Bidirectional Base64 encode/decode with support for URL-safe variants and raw binary round-tripping — the original feature the tool was named for.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-6 accent-text">Implementation Detail: ANSI TUI Rendering</h2>
+      <p class="text-gray-400 mb-4 text-sm">The entire UI is drawn using raw ANSI escape sequences — no external TUI library. Panel layout uses cursor positioning and VT100 control codes:</p>
+      <div class="code-block">
+<span class="cm"># Draw a TrueColor bordered panel directly to the terminal</span>
+<span class="kw">function</span> <span class="fn">Draw-Panel</span> {
+    <span class="kw">param</span>([<span class="fn">int</span>]$X, [<span class="fn">int</span>]$Y, [<span class="fn">int</span>]$W, [<span class="fn">int</span>]$H, [<span class="fn">string</span>]$Title)
+
+    <span class="cm"># Set cursor position using VT escape sequence</span>
+    [Console]::<span class="fn">SetCursorPosition</span>($X, $Y)
+
+    <span class="cm"># TrueColor top border  ESC[38;2;R;G;Bm</span>
+    <span class="kw">Write-Host</span> <span class="str">"`e[38;2;34;211;238m┌─ $Title $('─' * ($W - $Title.Length - 4))┐`e[0m"</span>
+
+    <span class="kw">for</span> ($i = <span class="num">1</span>; $i -lt $H; $i++) {
+        [Console]::<span class="fn">SetCursorPosition</span>($X, $Y + $i)
+        <span class="kw">Write-Host</span> <span class="str">"`e[38;2;34;211;238m│`e[0m$(' ' * ($W - 2))`e[38;2;34;211;238m│`e[0m"</span>
+    }
+}
+      </div>
+    </section>
+
+    <section class="rounded-2xl border accent-border border p-8 text-center accent-bg">
+      <h2 class="text-2xl font-bold mb-3">Inspect the Source</h2>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto text-sm">The entire workstation is open-source. One script, zero dependencies.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-cyan-700 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors">
+          GitHub Repository ↗
+        </a>
+        <a href="../index.html#projects" class="px-6 py-3 border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-gray-200 font-semibold rounded-lg transition-colors">
+          ← All Projects
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-sm font-mono">
+    <p>&copy; 2024–2026 Justin Bogner / Cambrian Minds</p>
+  </footer>
+</body>
+</html>

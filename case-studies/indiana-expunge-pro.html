@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>indiana-expunge-pro | Case Study | Cambrian Minds</title>
+  <meta name="description" content="Deep dive into indiana-expunge-pro: a batch IC § 35-38-9 workflow engine that generates court-ready Trial Rule 10 pleadings for legal aid clinics in Indiana.">
+  <meta name="author" content="Justin Bogner">
+  <link rel="canonical" href="https://cambrianminds.github.io/case-studies/indiana-expunge-pro.html">
+  <link rel="icon" type="image/jpeg" href="../favicon.webp">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://cambrianminds.github.io/case-studies/indiana-expunge-pro.html">
+  <meta property="og:title" content="indiana-expunge-pro | Case Study | Cambrian Minds">
+  <meta property="og:description" content="Batch IC § 35-38-9 Workflow Engine for Indiana legal aid clinics.">
+  <meta property="og:image" content="https://cambrianminds.github.io/assets/images/expunger-pro.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .case-study-hero {
+      background: radial-gradient(ellipse at top, rgb(88, 28, 135) 0%, rgb(30, 27, 75) 40%, rgb(3, 7, 18) 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 6rem 1rem 4rem;
+    }
+    .accent-bar { background: rgb(168, 85, 247); }
+    .accent-text { color: rgb(168, 85, 247); }
+    .accent-border { border-color: rgba(168, 85, 247, 0.4); }
+    .accent-bg { background: rgba(168, 85, 247, 0.1); }
+    .code-block {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    .code-block .kw  { color: #ff7b72; }
+    .code-block .fn  { color: #d2a8ff; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .cm  { color: #8b949e; }
+    .code-block .num { color: #79c0ff; }
+    .stat-card {
+      background: rgba(31, 41, 55, 0.5);
+      border: 1px solid rgba(55, 65, 81, 1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .section-prose { max-width: 72ch; }
+  </style>
+</head>
+<body class="font-sans bg-gray-950 text-white">
+
+  <!-- Back nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-3 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        cd ../
+      </a>
+      <a href="../index.html">
+        <img src="../cambrianminds-logo-dark.webp" alt="Cambrian Minds" class="h-8 w-auto rounded" loading="lazy">
+      </a>
+      <a href="https://cambrianminds.github.io/indiana-expunge-pro/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-purple-400 hover:text-white border border-purple-500/40 rounded-md px-3 py-1.5 transition-colors">
+        Launch App ↗
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="case-study-hero">
+    <div class="max-w-5xl mx-auto w-full">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-1 h-8 accent-bar rounded"></div>
+        <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">Civic Technology · Legal Automation</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">indiana-expunge-pro</h1>
+      <p class="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl">Batch IC&nbsp;§&nbsp;35-38-9 Workflow Engine for Indiana Legal Aid Clinics</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">React</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">TypeScript</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">pdf-lib</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">WebWorkers</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">IndexedDB</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Client-Side Only</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-16 space-y-20">
+
+    <!-- Screenshot -->
+    <section>
+      <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+        <img src="../assets/images/expunger-pro.webp" alt="indiana-expunge-pro interface" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-2xl font-bold mb-4 accent-text">The Problem</h2>
+        <div class="section-prose text-gray-300 space-y-4 leading-relaxed">
+          <p>Indiana's Second Chance Law (IC&nbsp;§&nbsp;35-38-9) offers a path to expungement for thousands of residents with qualifying criminal records—but the process is catastrophically complex.</p>
+          <p>A single client can have offenses spanning multiple counties, multiple charge classes (A–D Misdemeanors, Level 1–6 Felonies, infractions), different waiting periods, and disqualifying conditions like unpaid restitution. Legal aid clinics—already understaffed—were drowning trying to evaluate even a dozen clients at a time manually.</p>
+          <p>Court-ready petitions must strictly conform to Indiana Trial Rule 10. A single formatting error can get a petition dismissed.</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">5-Tier</div>
+          <div class="text-sm text-gray-400">Statutory eligibility evaluation per client</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">10</div>
+          <div class="text-sm text-gray-400">Court-ready Trial Rule 10 PDFs generated per client</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">0</div>
+          <div class="text-sm text-gray-400">Server requests — fully client-side, air-gap ready</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section>
+      <h2 class="text-2xl font-bold mb-8 accent-text">System Architecture</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-purple-500/50 transition-colors">
+          <div class="text-2xl mb-3">📥</div>
+          <h3 class="font-bold text-white mb-2">Roster Ingestion</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Accepts multi-client JSON and CSV exports from MyCase (Indiana Odyssey). Parses charge class, disposition date, county, and restitution status in a single pass.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-purple-500/50 transition-colors">
+          <div class="text-2xl mb-3">⚖️</div>
+          <h3 class="font-bold text-white mb-2">Parallel Eligibility Engine</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Spawns a WebWorker per client. Each worker evaluates all 5 tiers of IC&nbsp;§&nbsp;35-38-9 concurrently — including waiting period math, restitution traps, and multi-county cross-checks.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-purple-500/50 transition-colors">
+          <div class="text-2xl mb-3">📄</div>
+          <h3 class="font-bold text-white mb-2">pdf-lib Pleading Compiler</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Generates 10 compliant Trial Rule 10 court petitions per eligible client — completely in-memory, in the browser. Bundles all PDFs into a single ZIP archive with LSC grant metrics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Snippet -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6 accent-text">Implementation Detail: Eligibility Engine</h2>
+      <p class="text-gray-400 mb-4 text-sm">The core of the system is a parallelized 5-tier evaluator. Each tier maps directly to a subsection of IC&nbsp;§&nbsp;35-38-9, in order:</p>
+      <div class="code-block">
+<span class="cm">// Simplified from the actual eligibility engine</span>
+<span class="kw">async function</span> <span class="fn">evaluateClient</span>(client: ClientRecord): <span class="fn">Promise</span>&lt;EligibilityResult&gt; {
+  <span class="kw">const</span> results = <span class="kw">await</span> Promise.all([
+    <span class="fn">checkMisdemeanor</span>(client),           <span class="cm">// IC § 35-38-9-2</span>
+    <span class="fn">checkClassDFelony</span>(client),           <span class="cm">// IC § 35-38-9-3</span>
+    <span class="fn">checkClassCFelony</span>(client),           <span class="cm">// IC § 35-38-9-4</span>
+    <span class="fn">checkClassBFelony</span>(client),           <span class="cm">// IC § 35-38-9-5</span>
+    <span class="fn">checkClassAFelony</span>(client),           <span class="cm">// IC § 35-38-9-6</span>
+  ]);
+
+  <span class="cm">// Flag restitution trap BEFORE eligibility confirmation</span>
+  <span class="kw">if</span> (client.restitution_unpaid > <span class="num">0</span>) {
+    <span class="kw">return</span> { eligible: <span class="kw">false</span>, reason: <span class="str">'RESTITUTION_TRAP'</span>, client };
+  }
+
+  <span class="kw">return</span> { eligible: results.<span class="fn">some</span>(r => r.eligible), tiers: results };
+}
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section>
+      <h2 class="text-2xl font-bold mb-8 accent-text">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-purple-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Multi-Client Batch Roster Parsing</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Ingests JSON and CSV exports from Indiana Odyssey (MyCase) to process entire clinic caseloads at once.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-purple-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Parallel 5-Tier Statutory Audit</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Evaluates all IC&nbsp;§&nbsp;35-38-9 subsections concurrently per client using WebWorkers for zero UI blocking.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-purple-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Trial Rule 10 Compliant PDF Generation</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Compiles 10 court-ready petition PDFs per eligible client, built in-memory with pdf-lib. No server, no uploads.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-purple-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">LSC Grant Impact Metrics & ZIP Archive</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Outputs a complete grant-reporting metrics bundle alongside a single ZIP archive of all generated petitions.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-purple-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Unpaid Restitution Trap Detection</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Explicitly flags clients with outstanding restitution — a disqualifying condition buried deep in the statute — before petitions are generated.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 rounded-lg border border-gray-800 bg-gray-900/40 p-4">
+          <span class="text-purple-400 text-lg mt-0.5">✓</span>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Fully Client-Side, Air-Gap Ready</h4>
+            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Zero server requests. Sensitive client data never leaves the browser. Operable in restricted legal aid clinic environments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="rounded-2xl border accent-border border p-8 text-center accent-bg">
+      <h2 class="text-2xl font-bold mb-3">See It In Action</h2>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto text-sm">The application is live and publicly accessible. No account or login required.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://cambrianminds.github.io/indiana-expunge-pro/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg transition-colors">
+          Launch App ↗
+        </a>
+        <a href="https://github.com/CambrianMinds/indiana-expunge-pro" target="_blank" rel="noopener noreferrer" class="px-6 py-3 border border-gray-600 hover:border-white text-gray-300 hover:text-white font-semibold rounded-lg transition-colors">
+          GitHub Repository ↗
+        </a>
+        <a href="../index.html#projects" class="px-6 py-3 border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-gray-200 font-semibold rounded-lg transition-colors">
+          ← All Projects
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-sm font-mono">
+    <p>&copy; 2024–2026 Justin Bogner / Cambrian Minds</p>
+  </footer>
+
+</body>
+</html>

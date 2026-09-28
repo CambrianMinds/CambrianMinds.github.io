@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>local-brain | Case Study | Cambrian Minds</title>
+  <meta name="description" content="Case study for local-brain: an air-gapped desktop document intelligence workstation running quantized Gemma-4 on-device with LanceDB vector search and zero cloud egress.">
+  <meta name="author" content="Justin Bogner">
+  <link rel="canonical" href="https://cambrianminds.github.io/case-studies/local-brain.html">
+  <link rel="icon" type="image/jpeg" href="../favicon.webp">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="local-brain | Case Study | Cambrian Minds">
+  <meta property="og:description" content="Air-gapped SLM document intelligence workstation with Gemma-4 and LanceDB.">
+  <meta property="og:image" content="https://cambrianminds.github.io/assets/images/local-brain.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .case-study-hero {
+      background: radial-gradient(ellipse at top, rgb(79, 70, 229) 0%, rgb(30, 27, 75) 40%, rgb(2, 6, 23) 100%);
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 6rem 1rem 4rem;
+    }
+    .accent-text { color: rgb(129, 140, 248); }
+    .accent-bar  { background: rgb(129, 140, 248); }
+    .accent-border { border-color: rgba(129, 140, 248, 0.4); }
+    .accent-bg { background: rgba(129, 140, 248, 0.08); }
+    .code-block {
+      background: #0d1117;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+    .code-block .kw  { color: #ff7b72; }
+    .code-block .fn  { color: #d2a8ff; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .cm  { color: #8b949e; }
+    .code-block .num { color: #79c0ff; }
+    .stat-card {
+      background: rgba(31, 41, 55, 0.5);
+      border: 1px solid rgba(55, 65, 81, 1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-950 text-white">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 px-4 py-3 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-mono">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        cd ../
+      </a>
+      <a href="../index.html"><img src="../cambrianminds-logo-dark.webp" alt="Cambrian Minds" class="h-8 w-auto rounded" loading="lazy"></a>
+      <a href="https://cambrianminds.github.io/local-brain/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-indigo-400 hover:text-white border border-indigo-500/40 rounded-md px-3 py-1.5 transition-colors">
+        View Project ↗
+      </a>
+    </div>
+  </nav>
+
+  <header class="case-study-hero">
+    <div class="max-w-5xl mx-auto w-full">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-1 h-8 accent-bar rounded"></div>
+        <span class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Applied AI · Air-Gapped Systems</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">local-brain</h1>
+      <p class="text-xl sm:text-2xl text-gray-300 font-light max-w-3xl">Air-Gapped SLM Document Intelligence Workstation</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Gemma-4</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">LanceDB</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">node-llama-cpp</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">Vulkan</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">SQLite WAL</span>
+        <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono text-gray-200">0 Cloud Egress</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-16 space-y-20">
+
+    <section>
+      <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+        <img src="../assets/images/local-brain.webp" alt="local-brain interface" class="w-full h-auto object-cover" loading="lazy">
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-2xl font-bold mb-4 accent-text">The Premise</h2>
+        <div class="text-gray-300 space-y-4 leading-relaxed">
+          <p>Every mainstream AI document assistant routes your data through a cloud API. For research, legal, medical, or classified contexts, that's simply not acceptable.</p>
+          <p><code class="text-indigo-400 font-mono text-sm">local-brain</code> answers the question: what does a fully sovereign, production-grade document intelligence workstation look like when you refuse to make a single network call?</p>
+          <p>It runs quantized Gemma-4 on-device via native C++ bindings, performs 384-dimensional semantic search against a local LanceDB instance, and version-controls all document state in SQLite WAL mode — with zero bytes leaving the machine.</p>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">384</div>
+          <div class="text-sm text-gray-400">Dimensional vector embeddings for semantic search</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">0 B</div>
+          <div class="text-sm text-gray-400">Cloud egress — fully sovereign operation</div>
+        </div>
+        <div class="stat-card accent-border border">
+          <div class="text-4xl font-bold accent-text mb-1">Hybrid</div>
+          <div class="text-sm text-gray-400">Vulkan GPU + CPU SIMD inference offload</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-8 accent-text">System Stack</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-indigo-500/50 transition-colors">
+          <h3 class="font-bold text-white mb-1 flex items-center gap-2"><span class="accent-text">🧠</span> Quantized Gemma-4 via node-llama-cpp</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">The model runs as a native C++ process bound into the Node.js runtime. GGUF quantization reduces memory footprint while preserving reasoning quality for document synthesis tasks.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-indigo-500/50 transition-colors">
+          <h3 class="font-bold text-white mb-1 flex items-center gap-2"><span class="accent-text">🔍</span> LanceDB Vector Search</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Documents are chunked, embedded into 384-dimensional vectors, and stored in a local LanceDB instance. ANN search enables sub-100ms semantic retrieval across large corpora.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-indigo-500/50 transition-colors">
+          <h3 class="font-bold text-white mb-1 flex items-center gap-2"><span class="accent-text">💾</span> SQLite WAL Versioning</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">All ingested documents, summaries, and query history are persisted with full WAL-mode SQLite. Write-Ahead Logging enables concurrent reads without blocking ingestion pipelines.</p>
+        </div>
+        <div class="rounded-xl border border-gray-700 bg-gray-800/40 p-5 hover:border-indigo-500/50 transition-colors">
+          <h3 class="font-bold text-white mb-1 flex items-center gap-2"><span class="accent-text">⚡</span> Vulkan GPU + CPU SIMD Offload</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">Inference is distributed across available hardware automatically. GPU layers are offloaded via Vulkan; remaining layers use AVX2/AVX-512 SIMD on CPU — maximizing throughput on consumer hardware.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-6 accent-text">Implementation Detail: Hybrid RAG Pipeline</h2>
+      <p class="text-gray-400 mb-4 text-sm">The retrieval-augmented generation (RAG) loop that powers document Q&A:</p>
+      <div class="code-block">
+<span class="cm">// Simplified RAG pipeline — no network calls at any stage</span>
+<span class="kw">async function</span> <span class="fn">queryDocuments</span>(question: <span class="fn">string</span>): <span class="fn">Promise</span>&lt;<span class="fn">string</span>&gt; {
+
+  <span class="cm">// 1. Embed the user question locally</span>
+  <span class="kw">const</span> queryVec = <span class="kw">await</span> embedder.<span class="fn">embed</span>(question);  <span class="cm">// 384-dim</span>
+
+  <span class="cm">// 2. ANN search against local LanceDB instance</span>
+  <span class="kw">const</span> chunks = <span class="kw">await</span> db.<span class="fn">table</span>(<span class="str">'documents'</span>)
+    .<span class="fn">search</span>(queryVec)
+    .<span class="fn">limit</span>(<span class="num">6</span>)
+    .<span class="fn">toArray</span>();
+
+  <span class="cm">// 3. Build context-injected prompt</span>
+  <span class="kw">const</span> context = chunks.<span class="fn">map</span>(c => c.text).<span class="fn">join</span>(<span class="str">'\n\n'</span>);
+  <span class="kw">const</span> prompt = <span class="str">`Context:\n${context}\n\nQuestion: ${question}`</span>;
+
+  <span class="cm">// 4. Inference via local Gemma-4 — 0 bytes to cloud</span>
+  <span class="kw">return</span> <span class="kw">await</span> llm.<span class="fn">complete</span>(prompt);
+}
+      </div>
+    </section>
+
+    <section class="rounded-2xl border accent-border border p-8 text-center accent-bg">
+      <h2 class="text-2xl font-bold mb-3">Explore local-brain</h2>
+      <p class="text-gray-400 mb-6 max-w-xl mx-auto text-sm">Full documentation and setup guide available on the project site.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://cambrianminds.github.io/local-brain/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-indigo-700 hover:bg-indigo-600 text-white font-semibold rounded-lg transition-colors">
+          View Project ↗
+        </a>
+        <a href="../index.html#projects" class="px-6 py-3 border border-gray-700 hover:border-gray-500 text-gray-400 hover:text-gray-200 font-semibold rounded-lg transition-colors">
+          ← All Projects
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-sm font-mono">
+    <p>&copy; 2024–2026 Justin Bogner / Cambrian Minds</p>
+  </footer>
+</body>
+</html>

@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" class="dark" style="color-scheme: dark;">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Justin Bogner | Systems Engineer & Civic Technologist | Cambrian Minds</title>
-  <meta name="description" content="Justin Bogner — Systems Engineer and Civic Technologist behind Cambrian Minds. Building zero-dependency terminal workstations, air-gapped AI systems, and legal automation for Indiana's Second Chance Law.">
+  <meta name="description"
+    content="Justin Bogner — Systems Engineer and Civic Technologist behind Cambrian Minds. Building zero-dependency terminal workstations, air-gapped AI systems, and legal automation for Indiana's Second Chance Law.">
   <meta name="author" content="Justin Bogner">
   <meta name="theme-color" content="#030712">
-  
+
   <link rel="canonical" href="https://cambrianminds.github.io/">
-  <link rel="icon" type="image/jpeg" href="favicon.jpg">
-  <link rel="apple-touch-icon" href="favicon.jpg">
+  <link rel="icon" type="image/jpeg" href="favicon.webp">
+  <link rel="apple-touch-icon" href="favicon.webp">
 
   <!-- OpenGraph / Social Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cambrianminds.github.io/">
   <meta property="og:title" content="Justin Bogner | Systems Engineer & Civic Technologist | Cambrian Minds">
-  <meta property="og:description" content="Terminal-native tools, air-gapped AI systems, and legal automation for Indiana's Second Chance Law (IC § 35-38-9).">
-  <meta property="og:image" content="https://cambrianminds.github.io/assets/images/profile.jpg">
+  <meta property="og:description"
+    content="Terminal-native tools, air-gapped AI systems, and legal automation for Indiana's Second Chance Law (IC § 35-38-9).">
+  <meta property="og:image" content="https://cambrianminds.github.io/assets/images/profile.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Justin Bogner | Cambrian Minds">
-  <meta name="twitter:description" content="Terminal-native tools, air-gapped AI systems, and legal automation for Indiana's Second Chance Law (IC § 35-38-9).">
-  <meta name="twitter:image" content="https://cambrianminds.github.io/assets/images/profile.jpg">
+  <meta name="twitter:description"
+    content="Terminal-native tools, air-gapped AI systems, and legal automation for Indiana's Second Chance Law (IC § 35-38-9).">
+  <meta name="twitter:image" content="https://cambrianminds.github.io/assets/images/profile.webp">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -31,7 +35,7 @@
     "name": "Justin Bogner",
     "alternateName": "Cambrian Minds",
     "url": "https://cambrianminds.github.io/",
-    "image": "https://cambrianminds.github.io/assets/images/profile.jpg",
+    "image": "https://cambrianminds.github.io/assets/images/profile.webp",
     "jobTitle": "Systems Engineer & Civic Technologist",
     "email": "mailto:contact@cambrianminds.com",
     "address": {
@@ -49,10 +53,13 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="font-sans bg-gray-950 text-white">
 
   <!-- ============================================================
@@ -62,18 +69,21 @@
     <div class="intro-text-box" id="intro-text-box">
       <div class="words-container" id="intro-words-container"></div>
     </div>
-    <div class="mt-8 text-xs font-mono text-gray-500 hover:text-gray-300 cursor-pointer transition-colors" id="skip-intro">
+    <div class="mt-8 text-xs font-mono text-gray-500 hover:text-gray-300 cursor-pointer transition-colors"
+      id="skip-intro">
       [ Click anywhere or press ESC to skip ]
     </div>
   </div>
 
   <!-- Interactive Background Starfield Canvas -->
-  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 bg-gray-950" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-10;background-color:#030712"></canvas>
+  <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 bg-gray-950"
+    style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-10;background-color:#030712"></canvas>
 
   <main class="relative overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900 text-white">
 
     <!-- Top Terminal Progress Bar & Telemetry -->
-    <div id="top-progress-bar" class="fixed top-0 left-0 right-0 z-[60] px-2 sm:px-4 py-2 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800 transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none">
+    <div id="top-progress-bar"
+      class="fixed top-0 left-0 right-0 z-[60] px-2 sm:px-4 py-2 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800 transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none">
       <div class="max-w-6xl mx-auto relative">
         <div class="flex items-center gap-2 sm:gap-4 font-mono text-xs sm:text-sm">
           <div class="hidden sm:flex items-center flex-shrink-0">
@@ -81,7 +91,9 @@
             <span id="top-progress-percent" class="text-yellow-400">0%</span>
           </div>
           <div class="flex-1 bg-gray-800 rounded-md h-5 sm:h-6 overflow-hidden relative border border-gray-700">
-            <div id="top-progress-fill" class="h-full bg-gradient-to-r from-blue-600 to-blue-400 transition-all duration-150 ease-out" style="width: 0%;">
+            <div id="top-progress-fill"
+              class="h-full bg-gradient-to-r from-blue-600 to-blue-400 transition-all duration-150 ease-out"
+              style="width: 0%;">
               <div class="absolute top-0 left-0 w-full h-full flex items-center px-1 sm:px-2 text-xs">
                 <code class="text-black font-bold whitespace-nowrap overflow-hidden">
                   <span class="opacity-90"><span id="top-progress-section">{intro_</span></span>
@@ -95,7 +107,8 @@
             </div>
           </div>
           <div class="relative flex-shrink-0">
-            <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center bg-gray-800 hover:bg-gray-700 text-white rounded-md px-2 py-1 text-xs font-mono transition-colors">
+            <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center bg-gray-800 hover:bg-gray-700 text-white rounded-md px-2 py-1 text-xs font-mono transition-colors">
               CambrianMinds ↗
             </a>
           </div>
@@ -104,24 +117,36 @@
     </div>
 
     <!-- Floating Pill Navigation Bar -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 opacity-100 bg-transparent py-5">
+    <header id="main-header"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 opacity-100 bg-transparent py-5">
       <div class="container mx-auto px-4 flex justify-between items-center">
         <a href="#intro" class="flex items-center">
-          <img src="cambrianminds-logo-dark.jpg" alt="Cambrian Minds" class="h-10 w-auto rounded">
+          <img src="cambrianminds-logo-dark.webp" alt="Cambrian Minds" class="h-10 w-auto rounded" loading="lazy">
         </a>
         <nav class="hidden md:block">
-          <div class="relative flex items-center gap-1 rounded-full p-1 border border-white/10 bg-gray-900/60 backdrop-blur-md">
-            <span id="nav-glider" class="pointer-events-none absolute rounded-full bg-slate-800/[0.9] border border-white/10 transition-all duration-300 ease-out" style="left: 0px; top: 0px; width: 0px; height: 0px; opacity: 0;"></span>
-            <button type="button" data-target="intro" class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Home</span></button>
-            <button type="button" data-target="about" class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>About</span></button>
-            <button type="button" data-target="skills" class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Skills</span></button>
-            <button type="button" data-target="projects" class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Projects</span></button>
-            <button type="button" data-target="experience" class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Experience</span></button>
-            <button type="button" data-target="contact" class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Contact</span></button>
+          <div
+            class="relative flex items-center gap-1 rounded-full p-1 border border-white/10 bg-gray-900/60 backdrop-blur-md">
+            <span id="nav-glider"
+              class="pointer-events-none absolute rounded-full bg-slate-800/[0.9] border border-white/10 transition-all duration-300 ease-out"
+              style="left: 0px; top: 0px; width: 0px; height: 0px; opacity: 0;"></span>
+            <button type="button" data-target="intro"
+              class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Home</span></button>
+            <button type="button" data-target="about"
+              class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>About</span></button>
+            <button type="button" data-target="skills"
+              class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Skills</span></button>
+            <button type="button" data-target="projects"
+              class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Projects</span></button>
+            <button type="button" data-target="experience"
+              class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Experience</span></button>
+            <button type="button" data-target="contact"
+              class="nav-btn relative z-10 block rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:text-white"><span>Contact</span></button>
           </div>
         </nav>
         <div class="md:hidden">
-          <button id="mobile-menu-btn" class="inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none" aria-label="Toggle navigation">
+          <button id="mobile-menu-btn"
+            class="inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none"
+            aria-label="Toggle navigation">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -131,12 +156,18 @@
       <!-- Mobile Dropdown -->
       <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 bg-gray-900/95 border-b border-gray-800">
         <div class="flex flex-col space-y-2">
-          <button type="button" data-target="intro" class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Home</button>
-          <button type="button" data-target="about" class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">About</button>
-          <button type="button" data-target="skills" class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Skills</button>
-          <button type="button" data-target="projects" class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Projects</button>
-          <button type="button" data-target="experience" class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Experience</button>
-          <button type="button" data-target="contact" class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Contact</button>
+          <button type="button" data-target="intro"
+            class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Home</button>
+          <button type="button" data-target="about"
+            class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">About</button>
+          <button type="button" data-target="skills"
+            class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Skills</button>
+          <button type="button" data-target="projects"
+            class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Projects</button>
+          <button type="button" data-target="experience"
+            class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Experience</button>
+          <button type="button" data-target="contact"
+            class="nav-btn text-left py-2 px-3 text-gray-300 hover:text-white">Contact</button>
         </div>
       </div>
     </header>
@@ -154,7 +185,8 @@
                 <p class="text-blue-500 font-medium mb-2 font-mono">Hey, I'm Justin</p>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                   <div class="Typewriter_typewriter inline-block">
-                    <span id="typewriter-text" class="text-white">Terminal Toolsmith</span><span class="Typewriter_cursor animate-pulse text-blue-500">|</span>
+                    <span id="typewriter-text" class="text-white">Terminal Toolsmith</span><span
+                      class="Typewriter_cursor animate-pulse text-blue-500">|</span>
                   </div>
                 </h1>
                 <h2 class="text-xl md:text-2xl text-gradient font-semibold">
@@ -162,31 +194,65 @@
                 </h2>
               </div>
               <p class="text-gray-300 max-w-lg leading-relaxed text-base sm:text-lg">
-                I build zero-dependency terminal workstations, air-gapped AI systems, and software that helps Hoosiers clear their criminal records. My work spans high-performance systems engineering, epistemic telemetry, and legal automation.
+                I build zero-dependency terminal workstations, air-gapped AI systems, and software that helps
+                individuals clear their criminal records. My work spans high-performance systems engineering, epistemic
+                telemetry, and legal automation.
               </p>
               <div class="flex flex-wrap gap-3 pt-2">
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium text-white h-10 px-5 bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
+                <a href="#contact"
+                  class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium text-white h-10 px-5 bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
                   Get in Touch
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
                 </a>
-                <a href="#projects" class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium border border-blue-600 text-blue-400 hover:bg-blue-600/10 h-10 px-5 transition-colors">
+                <a href="#projects"
+                  class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium border border-blue-600 text-blue-400 hover:bg-blue-600/10 h-10 px-5 transition-colors">
                   Explore Projects
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 10 5 5 5-5"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m7 10 5 5 5-5"></path>
+                  </svg>
                 </a>
               </div>
               <!-- Social & Attribution Row -->
               <div class="flex items-center gap-4 pt-3">
-                <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10" aria-label="GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                  aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
                 </a>
-                <a href="https://orcid.org/0009-0006-8397-1233" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10" aria-label="ORCID Research">
-                  <span class="font-bold text-xs px-1.5 py-0.5 rounded bg-lime-500/20 text-lime-400 border border-lime-500/30">iD</span>
+                <a href="https://orcid.org/0009-0006-8397-1233" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                  aria-label="ORCID Research">
+                  <span
+                    class="font-bold text-xs px-1.5 py-0.5 rounded bg-lime-500/20 text-lime-400 border border-lime-500/30">iD</span>
                 </a>
-                <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10" aria-label="Terminal Workstations">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                  aria-label="Terminal Workstations">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
                 </a>
-                <a href="mailto:contact@cambrianminds.com" class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10" aria-label="Email">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+                <a href="mailto:contact@cambrianminds.com"
+                  class="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                  aria-label="Email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -196,10 +262,12 @@
           <div class="order-1 lg:order-2 flex justify-center">
             <div class="relative w-64 h-64 md:w-80 md:h-80">
               <div class="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl"></div>
-              <div class="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 h-full w-full overflow-hidden shadow-2xl">
+              <div
+                class="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 h-full w-full overflow-hidden shadow-2xl">
                 <div class="absolute inset-0 bg-grid opacity-20"></div>
                 <div class="h-full w-full rounded-xl overflow-hidden relative border border-white/10">
-                  <img alt="Justin Bogner — Systems Engineer" class="object-cover w-full h-full" src="assets/images/profile.jpg">
+                  <img alt="Justin Bogner — Systems Engineer" class="object-cover w-full h-full"
+                    src="assets/images/profile.webp" loading="lazy">
                 </div>
               </div>
             </div>
@@ -209,8 +277,15 @@
 
       <!-- Bouncing Scroll Down Cue -->
       <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex justify-center">
-        <a href="#about" class="animate-bounce inline-flex items-center justify-center h-10 w-10 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm text-gray-300 hover:text-white" aria-label="Scroll down">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+        <a href="#about"
+          class="animate-bounce inline-flex items-center justify-center h-10 w-10 rounded-full border border-gray-700 bg-gray-800/60 backdrop-blur-sm text-gray-300 hover:text-white"
+          aria-label="Scroll down">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-down">
+            <path d="M12 5v14"></path>
+            <path d="m19 12-7 7-7-7"></path>
+          </svg>
         </a>
       </div>
     </section>
@@ -231,13 +306,22 @@
               <div class="absolute inset-0 bg-dots opacity-30 rounded-xl"></div>
               <div class="relative space-y-6">
                 <p class="text-gray-300 text-base md:text-lg leading-relaxed">
-                  I'm a systems engineer focused on terminal-native tooling and civic technology. I build zero-dependency workstations, embedded AI systems, and high-performance parsers. On the civic side, I develop workflow engines and client-side web applications that help attorneys and pro-se petitioners automate Indiana's complex Second Chance Law (<a href="https://iga.in.gov/laws/2026/ic/titles/35#35-38-9" target="_blank" rel="noopener" class="text-blue-400 hover:underline">IC § 35‑38‑9</a>) with zero cloud data leakage.
+                  I'm a systems engineer focused on terminal-native tooling and civic technology. I build
+                  zero-dependency workstations, embedded AI systems, and high-performance parsers. On the civic side, I
+                  develop workflow engines and client-side web applications that help attorneys and petitioners automate
+                  Indiana's complex <a href="https://iga.in.gov/laws/2026/ic/titles/35#35-38-9" target="_blank"
+                    rel="noopener" class="text-blue-400 hover:underline">Second Chance Law</a> with zero cloud data
+                  leakage.
                 </p>
 
                 <div class="space-y-4 pt-2">
                   <div class="flex items-start gap-3">
                     <div class="text-blue-400 mt-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                      </svg>
                     </div>
                     <div>
                       <h3 class="font-medium text-white text-sm">Direct Contact</h3>
@@ -247,7 +331,13 @@
 
                   <div class="flex items-start gap-3">
                     <div class="text-blue-400 mt-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                        </path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
                     </div>
                     <div>
                       <h3 class="font-medium text-white text-sm">Jurisdiction &amp; Location</h3>
@@ -257,7 +347,10 @@
 
                   <div class="flex items-start gap-3">
                     <div class="text-blue-400 mt-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                      </svg>
                     </div>
                     <div>
                       <h3 class="font-medium text-white text-sm">Research Attribution</h3>
@@ -269,13 +362,27 @@
                 <div class="pt-4">
                   <h3 class="font-medium mb-3 text-sm text-gray-200">Core Areas</h3>
                   <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Terminal Tooling</span>
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Civic Tech (IC § 35-38-9)</span>
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Anti-Sycophancy AI Telemetry</span>
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Air-Gapped SLM Systems</span>
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Trial Rule 10 Document Gen</span>
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">LanceDB Vector Workstations</span>
-                    <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">PowerShell Forensics</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Terminal
+                      Tooling</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Civic
+                      Tech (IC § 35-38-9)</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Anti-Sycophancy
+                      AI Telemetry</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Air-Gapped
+                      SLM Systems</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">Trial
+                      Rule 10 Document Gen</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">LanceDB
+                      Vector Workstations</span>
+                    <span
+                      class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border-blue-500/30">PowerShell
+                      Forensics</span>
                   </div>
                 </div>
               </div>
@@ -287,7 +394,8 @@
             <div class="space-y-6">
               <h3 class="text-xl font-bold text-gray-200 mb-4">Focus &amp; Practice</h3>
               <div class="space-y-4">
-                <div class="rounded-xl border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors p-5 shadow-lg">
+                <div
+                  class="rounded-xl border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors p-5 shadow-lg">
                   <h4 class="font-bold text-lg mb-1 text-white">Terminal-Native Engineering</h4>
                   <p class="text-blue-400 mb-2 text-sm font-mono">Systems &amp; CLI Tooling</p>
                   <div class="flex justify-between text-xs sm:text-sm text-gray-400">
@@ -296,7 +404,8 @@
                   </div>
                 </div>
 
-                <div class="rounded-xl border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors p-5 shadow-lg">
+                <div
+                  class="rounded-xl border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors p-5 shadow-lg">
                   <h4 class="font-bold text-lg mb-1 text-white">Civic Technology (IC § 35-38-9)</h4>
                   <p class="text-blue-400 mb-2 text-sm font-mono">Legal Automation &amp; Trial Rule 10 Pleadings</p>
                   <div class="flex justify-between text-xs sm:text-sm text-gray-400">
@@ -305,7 +414,8 @@
                   </div>
                 </div>
 
-                <div class="rounded-xl border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors p-5 shadow-lg">
+                <div
+                  class="rounded-xl border bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors p-5 shadow-lg">
                   <h4 class="font-bold text-lg mb-1 text-white">Applied Artificial Intelligence</h4>
                   <p class="text-blue-400 mb-2 text-sm font-mono">Embedded SLMs &amp; Epistemic Telemetry</p>
                   <div class="flex justify-between text-xs sm:text-sm text-gray-400">
@@ -332,6 +442,7 @@
           user-select: none;
           gap: 2rem;
         }
+
         .marquee-content {
           flex-shrink: 0;
           display: flex;
@@ -340,20 +451,35 @@
           gap: 2rem;
           animation: scroll 40s linear infinite;
         }
+
         .marquee-content.reverse {
           animation: scroll-reverse 45s linear infinite;
         }
+
         .marquee-container:hover .marquee-content {
           animation-play-state: paused;
         }
+
         @keyframes scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(calc(-100% - 2rem)); }
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(calc(-100% - 2rem));
+          }
         }
+
         @keyframes scroll-reverse {
-          from { transform: translateX(calc(-100% - 2rem)); }
-          to { transform: translateX(0); }
+          from {
+            transform: translateX(calc(-100% - 2rem));
+          }
+
+          to {
+            transform: translateX(0);
+          }
         }
+
         .skill-badge {
           display: inline-flex;
           align-items: center;
@@ -368,19 +494,24 @@
           font-size: 0.875rem;
           white-space: nowrap;
         }
+
         .skill-badge:hover {
           border-color: rgba(59, 130, 246, 0.5);
           color: white;
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
-        .skill-badge svg, .skill-badge span.icon-text {
+
+        .skill-badge svg,
+        .skill-badge span.icon-text {
           color: rgba(96, 165, 250, 1);
           font-weight: bold;
         }
+
         .marquee-wrapper {
           position: relative;
         }
+
         .marquee-wrapper::before,
         .marquee-wrapper::after {
           content: "";
@@ -391,10 +522,12 @@
           z-index: 2;
           pointer-events: none;
         }
+
         .marquee-wrapper::before {
           left: 0;
           background: linear-gradient(to right, rgba(17, 24, 39, 1), transparent);
         }
+
         .marquee-wrapper::after {
           right: 0;
           background: linear-gradient(to left, rgba(17, 24, 39, 1), transparent);
@@ -476,11 +609,20 @@
          ============================================================ -->
     <section id="projects" class="relative bg-black py-24 border-t border-gray-800">
       <!-- Custom Cursor Follower -->
-      <div id="cursor-follower" class="fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200">
+      <div id="cursor-follower"
+        class="fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200">
         <div class="relative w-[100px] h-[100px]">
-          <div class="w-full h-full rounded-full border border-gray-400/80 bg-black/60 flex items-center justify-center relative shadow-[0_0_20px_5px_rgba(255,255,255,0.2)] ring-1 ring-white/10">
+          <div
+            class="w-full h-full rounded-full border border-gray-400/80 bg-black/60 flex items-center justify-center relative shadow-[0_0_20px_5px_rgba(255,255,255,0.2)] ring-1 ring-white/10">
             <div class="flex items-center justify-center bg-white/20 rounded-full w-[50px] h-[50px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="text-white">
+                <path
+                  d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0">
+                </path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
             </div>
             <div class="absolute inset-0 animate-spin-slow p-2">
               <svg viewBox="0 0 141 141" class="w-full h-full">
@@ -506,15 +648,20 @@
           <!-- Project 1: indiana-expunge-pro -->
           <div class="project-showcase-card max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
             <div class="flex-1 lg:order-1 w-full">
-              <div class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
-                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300" style="background: radial-gradient(circle, rgb(88, 28, 135), rgb(30, 27, 75), rgb(15, 23, 42));">
+              <div
+                class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
+                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300"
+                  style="background: radial-gradient(circle, rgb(88, 28, 135), rgb(30, 27, 75), rgb(15, 23, 42));">
                   <div class="relative z-10 mb-6">
                     <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
                       indiana-expunge-pro: Batch IC § 35-38-9 Workflow Engine
                     </h3>
                   </div>
-                  <div class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none rotate-2">
-                    <img alt="Indiana Expunge Pro Preview" class="w-full h-auto object-cover rounded-lg border border-white/10" src="assets/images/expunger-pro.png">
+                  <div
+                    class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none rotate-2">
+                    <img alt="Indiana Expunge Pro Preview"
+                      class="w-full h-auto object-cover rounded-lg border border-white/10"
+                      src="assets/images/expunger-pro.webp" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -523,18 +670,25 @@
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-6 bg-purple-500 rounded"></div>
                 <h3 class="text-2xl font-bold text-white">indiana-expunge-pro</h3>
-                <a href="https://cambrianminds.github.io/indiana-expunge-pro/" target="_blank" rel="noopener noreferrer" class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
+                <a href="https://cambrianminds.github.io/indiana-expunge-pro/" target="_blank" rel="noopener noreferrer"
+                  class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
                   Check out ↗
                 </a>
               </div>
               <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Enterprise legal clinic workflow engine that batch-processes multi-client MyCase (Odyssey) court exports, evaluates 5-tier IC § 35-38-9 eligibility in parallel, flags unpaid restitution traps, and compiles 10 court-ready Trial Rule 10 pleadings per client.
+                Enterprise legal clinic workflow engine that batch-processes multi-client MyCase (Odyssey) court
+                exports, evaluates 5-tier IC § 35-38-9 eligibility in parallel, flags unpaid restitution traps, and
+                compiles 10 court-ready Trial Rule 10 pleadings per client.
               </p>
               <ul class="text-sm text-gray-400 space-y-2 font-mono">
-                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Multi-client JSON/CSV roster batch parsing</li>
-                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Parallel 5-tier statutory rules audit</li>
-                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> 10 Trial Rule 10 court PDFs per client</li>
-                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> LSC grant impact metrics &amp; ZIP archiving</li>
+                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Multi-client JSON/CSV roster
+                  batch parsing</li>
+                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Parallel 5-tier statutory
+                  rules audit</li>
+                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> 10 Trial Rule 10 court PDFs
+                  per client</li>
+                <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> LSC grant impact metrics
+                  &amp; ZIP archiving</li>
               </ul>
               <div class="flex flex-wrap gap-2 pt-2">
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">React</span>
@@ -543,21 +697,30 @@
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">WebWorkers</span>
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Client-Side</span>
               </div>
+              <a href="case-studies/indiana-expunge-pro.html"
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-purple-400 hover:text-purple-300 transition-colors mt-1">
+                Deep Dive Case Study →
+              </a>
             </div>
           </div>
 
           <!-- Project 2: cambriansystems-tui -->
           <div class="project-showcase-card max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
             <div class="flex-1 lg:order-1 w-full">
-              <div class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
-                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300" style="background: radial-gradient(circle, rgb(14, 116, 144), rgb(15, 23, 42), rgb(2, 6, 23));">
+              <div
+                class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
+                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300"
+                  style="background: radial-gradient(circle, rgb(14, 116, 144), rgb(15, 23, 42), rgb(2, 6, 23));">
                   <div class="relative z-10 mb-6">
                     <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
                       cambriansystems-tui: Zero-Dependency PowerShell Workstation
                     </h3>
                   </div>
-                  <div class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none -rotate-2">
-                    <img alt="Cambrian Systems TUI Preview" class="w-full h-auto object-cover rounded-lg border border-white/10" src="assets/images/base64-tui.png">
+                  <div
+                    class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none -rotate-2">
+                    <img alt="Cambrian Systems TUI Preview"
+                      class="w-full h-auto object-cover rounded-lg border border-white/10"
+                      src="assets/images/base64-tui.webp" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -566,18 +729,25 @@
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-6 bg-cyan-500 rounded"></div>
                 <h3 class="text-2xl font-bold text-white">cambriansystems-tui</h3>
-                <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer" class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
+                <a href="https://github.com/CambrianMinds/base64-tui" target="_blank" rel="noopener noreferrer"
+                  class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
                   Check out ↗
                 </a>
               </div>
               <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Self-contained PowerShell terminal workstation operating completely air-gapped without external packages or internet. Built for cryptographic token inspection with lifetime meters, multi-hash telemetry, steganography, hex dumps, and phosphor QR codes.
+                Self-contained PowerShell terminal workstation operating completely air-gapped without external packages
+                or internet. Built for cryptographic token inspection with lifetime meters, multi-hash telemetry,
+                steganography, hex dumps, and phosphor QR codes.
               </p>
               <ul class="text-sm text-gray-400 space-y-2 font-mono">
-                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Corporate JWT inspection &amp; lifetime bars</li>
-                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Multi-hash telemetry (MD5 → SHA-512)</li>
-                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Steganography payload carrier in media</li>
-                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> In-terminal phosphor QR generator</li>
+                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Corporate JWT inspection &amp;
+                  lifetime bars</li>
+                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Multi-hash telemetry (MD5 →
+                  SHA-512)</li>
+                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Steganography payload carrier
+                  in media</li>
+                <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> In-terminal phosphor QR
+                  generator</li>
               </ul>
               <div class="flex flex-wrap gap-2 pt-2">
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">PowerShell</span>
@@ -586,21 +756,29 @@
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Zero-Deps</span>
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Air-Gapped</span>
               </div>
+              <a href="case-studies/cambriansystems-tui.html"
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors mt-1">
+                Deep Dive Case Study →
+              </a>
             </div>
           </div>
 
           <!-- Project 3: local-brain -->
           <div class="project-showcase-card max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
             <div class="flex-1 lg:order-1 w-full">
-              <div class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
-                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300" style="background: radial-gradient(circle, rgb(79, 70, 229), rgb(30, 27, 75), rgb(2, 6, 23));">
+              <div
+                class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
+                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300"
+                  style="background: radial-gradient(circle, rgb(79, 70, 229), rgb(30, 27, 75), rgb(2, 6, 23));">
                   <div class="relative z-10 mb-6">
                     <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
                       local-brain: Air-Gapped SLM Document Intelligence
                     </h3>
                   </div>
-                  <div class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none rotate-2">
-                    <img alt="Local Brain Preview" class="w-full h-auto object-cover rounded-lg border border-white/10" src="assets/images/local-brain.png">
+                  <div
+                    class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none rotate-2">
+                    <img alt="Local Brain Preview" class="w-full h-auto object-cover rounded-lg border border-white/10"
+                      src="assets/images/local-brain.webp" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -609,18 +787,25 @@
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-6 bg-indigo-500 rounded"></div>
                 <h3 class="text-2xl font-bold text-white">local-brain</h3>
-                <a href="https://cambrianminds.github.io/local-brain/" target="_blank" rel="noopener noreferrer" class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
+                <a href="https://cambrianminds.github.io/local-brain/" target="_blank" rel="noopener noreferrer"
+                  class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
                   Check out ↗
                 </a>
               </div>
               <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Air-gapped desktop document intelligence workstation. Runs quantized Gemma-4 on-device via native C++ bindings, LanceDB vector search with 384-dimensional embeddings, SQLite WAL versioning, and hybrid Vulkan GPU offload with 0 bytes cloud egress.
+                Air-gapped desktop document intelligence workstation. Runs quantized Gemma-4 on-device via native C++
+                bindings, LanceDB vector search with 384-dimensional embeddings, SQLite WAL versioning, and hybrid
+                Vulkan GPU offload with 0 bytes cloud egress.
               </p>
               <ul class="text-sm text-gray-400 space-y-2 font-mono">
-                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> On-device quantized Gemma-4 via node-llama-cpp</li>
-                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> LanceDB 384-dim semantic vector search</li>
-                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Multi-tier summary &amp; technical synthesis</li>
-                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Vulkan GPU + CPU SIMD hybrid offload</li>
+                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> On-device quantized Gemma-4
+                  via node-llama-cpp</li>
+                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> LanceDB 384-dim semantic
+                  vector search</li>
+                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Multi-tier summary &amp;
+                  technical synthesis</li>
+                <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> Vulkan GPU + CPU SIMD hybrid
+                  offload</li>
               </ul>
               <div class="flex flex-wrap gap-2 pt-2">
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Gemma-4</span>
@@ -629,21 +814,30 @@
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Vulkan</span>
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">SQLite WAL</span>
               </div>
+              <a href="case-studies/local-brain.html"
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-indigo-300 transition-colors mt-1">
+                Deep Dive Case Study →
+              </a>
             </div>
           </div>
 
           <!-- Project 4: diaclectics -->
           <div class="project-showcase-card max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
             <div class="flex-1 lg:order-1 w-full">
-              <div class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
-                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300" style="background: radial-gradient(circle, rgb(3, 105, 161), rgb(15, 23, 42), rgb(2, 6, 23));">
+              <div
+                class="border border-white/30 lg:border-2 lg:border-white/50 hover:border-white rounded-2xl lg:rounded-3xl transition-all duration-500 ease-in-out">
+                <div class="relative rounded-2xl lg:rounded-3xl p-6 sm:p-8 overflow-hidden transition-all duration-300"
+                  style="background: radial-gradient(circle, rgb(3, 105, 161), rgb(15, 23, 42), rgb(2, 6, 23));">
                   <div class="relative z-10 mb-6">
                     <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
                       diaclectics: Real-Time Anti-Sycophancy Engine
                     </h3>
                   </div>
-                  <div class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none -rotate-2">
-                    <img alt="Diaclectics Phase Space Preview" class="w-full h-auto object-cover rounded-lg border border-white/10" src="assets/images/diaclectics.png">
+                  <div
+                    class="project-preview-card relative z-10 bg-gray-900 rounded-xl p-3 sm:p-4 shadow-2xl transform transition-all duration-500 hover:scale-[1.02] cursor-none -rotate-2">
+                    <img alt="Diaclectics Phase Space Preview"
+                      class="w-full h-auto object-cover rounded-lg border border-white/10"
+                      src="assets/images/diaclectics.webp" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -652,18 +846,25 @@
               <div class="flex items-center gap-2">
                 <div class="w-1.5 h-6 bg-sky-500 rounded"></div>
                 <h3 class="text-2xl font-bold text-white">diaclectics</h3>
-                <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer" class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
+                <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer"
+                  class="group text-xs font-semibold text-white/80 hover:text-white border border-white/30 rounded-md px-3 py-1 flex items-center gap-1.5 ml-auto transition-colors">
                   Check out ↗
                 </a>
               </div>
               <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Real-time anti-sycophancy and epistemic telemetry engine for frontier AI models. Computes a Robust Capitulation Index (RCI) from multi-axis epistemic state vectors, intercepting ungrounded concessions pre-emission and validating claims via OpenAlex.
+                Real-time anti-sycophancy and epistemic telemetry engine for frontier AI models. Computes a Robust
+                Capitulation Index (RCI) from multi-axis epistemic state vectors, intercepting ungrounded concessions
+                pre-emission and validating claims via OpenAlex.
               </p>
               <ul class="text-sm text-gray-400 space-y-2 font-mono">
-                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Epistemic tension phase space modeling</li>
-                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Robust Capitulation Index (RCI) tripwire gate</li>
-                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> OpenAlex peer-reviewed citation verification</li>
-                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Drop-in OpenAI-compatible proxy interface</li>
+                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Epistemic tension phase space
+                  modeling</li>
+                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Robust Capitulation Index (RCI)
+                  tripwire gate</li>
+                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> OpenAlex peer-reviewed citation
+                  verification</li>
+                <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Drop-in OpenAI-compatible proxy
+                  interface</li>
               </ul>
               <div class="flex flex-wrap gap-2 pt-2">
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Epistemic Telemetry</span>
@@ -671,6 +872,10 @@
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Python</span>
                 <span class="px-2.5 py-1 bg-white/10 rounded text-xs font-mono text-gray-200">Proxy Engine</span>
               </div>
+              <a href="case-studies/diaclectics.html"
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400 hover:text-sky-300 transition-colors mt-1">
+                Deep Dive Case Study →
+              </a>
             </div>
           </div>
 
@@ -678,60 +883,80 @@
 
         <!-- Secondary Projects Grid -->
         <div class="mt-24 pt-12 border-t border-gray-800">
-          <h3 class="text-2xl font-bold text-center text-white mb-8 font-mono"><span class="scramble-heading cursor-pointer" data-text="Auxiliary Systems &amp; Research Tools">Auxiliary Systems &amp; Research Tools</span></h3>
+          <h3 class="text-2xl font-bold text-center text-white mb-8 font-mono"><span
+              class="scramble-heading cursor-pointer" data-text="Auxiliary Systems &amp; Research Tools">Auxiliary
+              Systems &amp; Research Tools</span></h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
+            <div
+              class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
               <div class="text-cyan-400 font-mono text-xs uppercase mb-2">● Terminal UI</div>
               <h4 class="text-lg font-bold text-white mb-2">gh-tui</h4>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                Premium terminal-native wrapper for the GitHub CLI built with Python and Textual. Interactive DataTables, bulk repo actions, markdown issue reader, and 1-line PowerShell installer.
+                Premium terminal-native wrapper for the GitHub CLI built with Python and Textual. Interactive
+                DataTables, bulk repo actions, markdown issue reader, and 1-line PowerShell installer.
               </p>
-              <a href="https://cambrianminds.github.io/gh-tui/" target="_blank" rel="noopener" class="text-xs font-mono text-blue-400 hover:underline">View Docs &amp; Demo →</a>
+              <a href="https://cambrianminds.github.io/gh-tui/" target="_blank" rel="noopener"
+                class="text-xs font-mono text-blue-400 hover:underline">View Docs &amp; Demo →</a>
             </div>
 
-            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
+            <div
+              class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
               <div class="text-purple-400 font-mono text-xs uppercase mb-2">● Speech Synthesis</div>
               <h4 class="text-lg font-bold text-white mb-2">xAI TTS Studio</h4>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                3-panel terminal studio for xAI Text-to-Speech API with 18+ emotional tags (`[pause]`, `[laugh]`, `<whisper>`), live voice discovery, dry-run mode, and web playground.
+                3-panel terminal studio for xAI Text-to-Speech API with 18+ emotional tags (`[pause]`, `[laugh]`, `
+                <whisper>`), live voice discovery, dry-run mode, and web playground.
               </p>
-              <a href="https://cambrianminds.github.io/xai-tts/" target="_blank" rel="noopener" class="text-xs font-mono text-blue-400 hover:underline">Interactive Playground →</a>
+              <a href="https://cambrianminds.github.io/xai-tts/" target="_blank" rel="noopener"
+                class="text-xs font-mono text-blue-400 hover:underline">Interactive Playground →</a>
             </div>
 
-            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
+            <div
+              class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
               <div class="text-green-400 font-mono text-xs uppercase mb-2">● Civic Tech</div>
               <h4 class="text-lg font-bold text-white mb-2">expunger / exp-2</h4>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                Chrome MV3 extension and standalone PWA that directly scrapes Indiana MyCase court records and compiles complete, compliant expungement pleadings in-browser.
+                Chrome MV3 extension and standalone PWA that directly scrapes Indiana MyCase court records and compiles
+                complete, compliant expungement pleadings in-browser.
               </p>
-              <a href="https://cambrianminds.github.io/expunger/" target="_blank" rel="noopener" class="text-xs font-mono text-blue-400 hover:underline">Launch App →</a>
+              <a href="https://cambrianminds.github.io/expunger/" target="_blank" rel="noopener"
+                class="text-xs font-mono text-blue-400 hover:underline">Launch App →</a>
             </div>
 
-            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
+            <div
+              class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
               <div class="text-green-400 font-mono text-xs uppercase mb-2">● Deadline Engine</div>
               <h4 class="text-lg font-bold text-white mb-2">reentry-dashboard</h4>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                Private IndexedDB vault tracking Trial Rule 6(A) judicial rolling, 30-day objection clocks, and 365-day multi-county filing windows with RFC 5545 iCalendar exports.
+                Private IndexedDB vault tracking Trial Rule 6(A) judicial rolling, 30-day objection clocks, and 365-day
+                multi-county filing windows with RFC 5545 iCalendar exports.
               </p>
-              <a href="https://github.com/CambrianMinds/reentry-dashboard" target="_blank" rel="noopener" class="text-xs font-mono text-blue-400 hover:underline">GitHub Repository →</a>
+              <a href="https://github.com/CambrianMinds/reentry-dashboard" target="_blank" rel="noopener"
+                class="text-xs font-mono text-blue-400 hover:underline">GitHub Repository →</a>
             </div>
 
-            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
+            <div
+              class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
               <div class="text-amber-400 font-mono text-xs uppercase mb-2">● Physics Research</div>
               <h4 class="text-lg font-bold text-white mb-2">Resonance Architecture</h4>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                Vibroacoustic hypothesis for ancient megalithic precision stoneworking grounded in ultrasonic friction reduction, piezoelectric quartz response, and contact mechanics.
+                Vibroacoustic hypothesis for ancient megalithic precision stoneworking grounded in ultrasonic friction
+                reduction, piezoelectric quartz response, and contact mechanics.
               </p>
-              <a href="https://github.com/CambrianMinds/resonance-architecture" target="_blank" rel="noopener" class="text-xs font-mono text-blue-400 hover:underline">Research Repository →</a>
+              <a href="https://github.com/CambrianMinds/resonance-architecture" target="_blank" rel="noopener"
+                class="text-xs font-mono text-blue-400 hover:underline">Research Repository →</a>
             </div>
 
-            <div class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
+            <div
+              class="rounded-xl border border-gray-800 bg-gray-900/50 p-6 hover:border-blue-500/50 transition-all card-hover">
               <div class="text-rose-400 font-mono text-xs uppercase mb-2">● Health Policy</div>
               <h4 class="text-lg font-bold text-white mb-2">MAiD Policy Packet</h4>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                Nine-document legislative and clinical policy packet for capacity-based Medical Aid in Dying reform, including statutory foundations and model reporting frameworks.
+                Nine-document legislative and clinical policy packet for capacity-based Medical Aid in Dying reform,
+                including statutory foundations and model reporting frameworks.
               </p>
-              <a href="https://github.com/CambrianMinds/MAiD" target="_blank" rel="noopener" class="text-xs font-mono text-blue-400 hover:underline">Policy Corpus →</a>
+              <a href="https://github.com/CambrianMinds/MAiD" target="_blank" rel="noopener"
+                class="text-xs font-mono text-blue-400 hover:underline">Policy Corpus →</a>
             </div>
           </div>
         </div>
@@ -745,7 +970,8 @@
          ============================================================ -->
     <div id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
       <h2 class="section-title text-gradient text-center text-3xl font-bold mb-12">
-        <span class="scramble-heading cursor-pointer" data-text="Experience &amp; Research">Experience &amp; Research</span>
+        <span class="scramble-heading cursor-pointer" data-text="Experience &amp; Research">Experience &amp;
+          Research</span>
       </h2>
       <div class="max-w-4xl mx-auto">
         <div class="relative">
@@ -753,25 +979,36 @@
 
           <!-- Item 1 (Left) -->
           <div class="mb-8 md:mb-12 flex md:flex-row items-start relative">
-            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10"></div>
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10">
+            </div>
             <div class="w-full md:w-1/2 md:pr-12">
-              <div class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
                 <div class="p-4 md:p-5">
                   <div class="flex items-start gap-3 mb-3">
                     <div class="p-2 rounded-full bg-blue-500/20 text-blue-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                      </svg>
                     </div>
                     <div>
-                      <h3 class="font-bold text-base md:text-lg text-white">Founder &amp; Principal Systems Engineer</h3>
+                      <h3 class="font-bold text-base md:text-lg text-white">Founder &amp; Principal Systems Engineer
+                      </h3>
                       <p class="text-xs md:text-sm text-gray-400">Cambrian Minds</p>
                     </div>
                   </div>
                   <p class="text-sm text-gray-300 leading-relaxed mb-3">
-                    Architecting zero-dependency terminal workstations, air-gapped SLM systems, and high-performance parsers. Overseeing core tooling releases across Python, PowerShell, and TypeScript.
+                    Architecting zero-dependency terminal workstations, air-gapped SLM systems, and high-performance
+                    parsers. Overseeing core tooling releases across Python, PowerShell, and TypeScript.
                   </p>
                   <div class="flex items-center justify-between text-xs text-gray-400 font-mono">
-                    <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">2024 - Present</span>
-                    <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">GitHub Org ↗</a>
+                    <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">2024 -
+                      Present</span>
+                    <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer"
+                      class="text-blue-400 hover:underline">GitHub Org ↗</a>
                   </div>
                 </div>
               </div>
@@ -780,13 +1017,20 @@
 
           <!-- Item 2 (Right) -->
           <div class="mb-8 md:mb-12 flex md:flex-row items-start relative">
-            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10"></div>
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10">
+            </div>
             <div class="w-full md:w-1/2 md:pl-12 md:ml-auto">
-              <div class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
                 <div class="p-4 md:p-5">
                   <div class="flex items-start gap-3 mb-3">
                     <div class="p-2 rounded-full bg-green-500/20 text-green-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 12 2 2 4-4"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                      </svg>
                     </div>
                     <div>
                       <h3 class="font-bold text-base md:text-lg text-white">Civic Technology &amp; Legal Automation</h3>
@@ -794,11 +1038,15 @@
                     </div>
                   </div>
                   <p class="text-sm text-gray-300 leading-relaxed mb-3">
-                    Directly modeling Indiana's IC § 35-38-9 expungement statute into client-side web engines. Enabling legal aid practitioners to evaluate multi-county rosters and generate complete Trial Rule 10 pleadings in minutes.
+                    Directly modeling Indiana's IC § 35-38-9 expungement statute into client-side web engines. Enabling
+                    legal aid practitioners to evaluate multi-county rosters and generate complete Trial Rule 10
+                    pleadings in minutes.
                   </p>
                   <div class="flex items-center justify-between text-xs text-gray-400 font-mono">
-                    <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">2023 - Present</span>
-                    <a href="https://cambrianminds.github.io/expunger/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Clinic Suite ↗</a>
+                    <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">2023 -
+                      Present</span>
+                    <a href="https://cambrianminds.github.io/expunger/" target="_blank" rel="noopener noreferrer"
+                      class="text-green-400 hover:underline">Clinic Suite ↗</a>
                   </div>
                 </div>
               </div>
@@ -807,25 +1055,36 @@
 
           <!-- Item 3 (Left) -->
           <div class="mb-8 md:mb-12 flex md:flex-row items-start relative">
-            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10"></div>
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10">
+            </div>
             <div class="w-full md:w-1/2 md:pr-12">
-              <div class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
                 <div class="p-4 md:p-5">
                   <div class="flex items-start gap-3 mb-3">
                     <div class="p-2 rounded-full bg-purple-500/20 text-purple-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
                     </div>
                     <div>
-                      <h3 class="font-bold text-base md:text-lg text-white">Resonance Architecture &amp; Vibroacoustics</h3>
+                      <h3 class="font-bold text-base md:text-lg text-white">Resonance Architecture &amp; Vibroacoustics
+                      </h3>
                       <p class="text-xs md:text-sm text-gray-400">ORCID: 0009-0006-8397-1233</p>
                     </div>
                   </div>
                   <p class="text-sm text-gray-300 leading-relaxed mb-3">
-                    Investigating ultrasonic friction reduction, piezoelectric response of quartz in granite matrices, and self-organizing contact mechanics in ancient megalithic masonry.
+                    Investigating ultrasonic friction reduction, piezoelectric response of quartz in granite matrices,
+                    and self-organizing contact mechanics in ancient megalithic masonry.
                   </p>
                   <div class="flex items-center justify-between text-xs text-gray-400 font-mono">
-                    <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Monograph</span>
-                    <a href="https://orcid.org/0009-0006-8397-1233" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:underline">ORCID Record ↗</a>
+                    <span
+                      class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Monograph</span>
+                    <a href="https://orcid.org/0009-0006-8397-1233" target="_blank" rel="noopener noreferrer"
+                      class="text-purple-400 hover:underline">ORCID Record ↗</a>
                   </div>
                 </div>
               </div>
@@ -834,25 +1093,38 @@
 
           <!-- Item 4 (Right) -->
           <div class="mb-8 md:mb-12 flex md:flex-row items-start relative">
-            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10"></div>
+            <div
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-900 z-10">
+            </div>
             <div class="w-full md:w-1/2 md:pl-12 md:ml-auto">
-              <div class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-colors card-hover">
                 <div class="p-4 md:p-5">
                   <div class="flex items-start gap-3 mb-3">
                     <div class="p-2 rounded-full bg-sky-500/20 text-sky-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="m17 5-5-3-5 3"></path><path d="m17 19-5 3-5-3"></path><path d="M2 12h20"></path></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20"></path>
+                        <path d="m17 5-5-3-5 3"></path>
+                        <path d="m17 19-5 3-5-3"></path>
+                        <path d="M2 12h20"></path>
+                      </svg>
                     </div>
                     <div>
-                      <h3 class="font-bold text-base md:text-lg text-white">The Serpent's Sentence &amp; Epistemic Telemetry</h3>
+                      <h3 class="font-bold text-base md:text-lg text-white">The Serpent's Sentence &amp; Epistemic
+                        Telemetry</h3>
                       <p class="text-xs md:text-sm text-gray-400">Cognitive &amp; Epistemic Studies</p>
                     </div>
                   </div>
                   <p class="text-sm text-gray-300 leading-relaxed mb-3">
-                    Investigating recursive selfhood in language, synthetic consciousness as a 'second Cambrian mind', and real-time anti-sycophancy vector math for frontier artificial intelligence.
+                    Investigating recursive selfhood in language, synthetic consciousness as a 'second Cambrian mind',
+                    and real-time anti-sycophancy vector math for frontier artificial intelligence.
                   </p>
                   <div class="flex items-center justify-between text-xs text-gray-400 font-mono">
-                    <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Research</span>
-                    <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:underline">Telemetry Engine ↗</a>
+                    <span
+                      class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Research</span>
+                    <a href="https://cambrianminds.github.io/diaclectics/" target="_blank" rel="noopener noreferrer"
+                      class="text-sky-400 hover:underline">Telemetry Engine ↗</a>
                   </div>
                 </div>
               </div>
@@ -878,43 +1150,65 @@
           <div class="space-y-6">
             <h3 class="text-2xl font-bold text-white">Connect With Me</h3>
             <p class="text-gray-300 text-base leading-relaxed">
-              Whether you are an attorney seeking to deploy Indiana Second Chance Law automation in your clinic, an engineer building terminal tools, or a researcher working on epistemic telemetry — reach out directly.
+              Whether you are an attorney seeking to deploy Indiana Second Chance Law automation in your clinic, an
+              engineer building terminal tools, or a researcher working on epistemic telemetry — reach out directly.
             </p>
 
             <div class="space-y-4 pt-4">
               <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
                 <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  </svg>
                 </div>
                 <div>
                   <div class="text-xs font-mono text-gray-400 uppercase">Direct Email</div>
-                  <a href="mailto:contact@cambrianminds.com" class="text-sm sm:text-base font-mono text-white hover:text-blue-400 transition-colors">contact@cambrianminds.com</a>
+                  <a href="mailto:contact@cambrianminds.com"
+                    class="text-sm sm:text-base font-mono text-white hover:text-blue-400 transition-colors">contact@cambrianminds.com</a>
                 </div>
               </div>
 
               <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
                 <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
                 </div>
                 <div>
                   <div class="text-xs font-mono text-gray-400 uppercase">GitHub Organization</div>
-                  <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-mono text-white hover:text-blue-400 transition-colors">github.com/CambrianMinds</a>
+                  <a href="https://github.com/CambrianMinds" target="_blank" rel="noopener noreferrer"
+                    class="text-sm sm:text-base font-mono text-white hover:text-blue-400 transition-colors">github.com/CambrianMinds</a>
                 </div>
               </div>
 
               <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
-                <div class="w-10 h-10 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 font-bold text-xs">
+                <div
+                  class="w-10 h-10 rounded-full bg-lime-500/10 flex items-center justify-center text-lime-400 font-bold text-xs">
                   iD
                 </div>
                 <div>
                   <div class="text-xs font-mono text-gray-400 uppercase">Research Attribution</div>
-                  <a href="https://orcid.org/0009-0006-8397-1233" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-mono text-white hover:text-blue-400 transition-colors">ORCID: 0009-0006-8397-1233</a>
+                  <a href="https://orcid.org/0009-0006-8397-1233" target="_blank" rel="noopener noreferrer"
+                    class="text-sm sm:text-base font-mono text-white hover:text-blue-400 transition-colors">ORCID:
+                    0009-0006-8397-1233</a>
                 </div>
               </div>
 
               <div class="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
                 <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                    </path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
                 </div>
                 <div>
                   <div class="text-xs font-mono text-gray-400 uppercase">Location</div>
@@ -928,22 +1222,35 @@
           <div class="bg-gray-800/60 border border-gray-700 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-md">
             <form id="contact-form" class="space-y-4">
               <div>
-                <label for="contact-name" class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Your Name</label>
-                <input type="text" id="contact-name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" placeholder="e.g. Sarah Thompson, Esq.">
+                <label for="contact-name" class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Your
+                  Name</label>
+                <input type="text" id="contact-name" required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                  placeholder="e.g. Sarah Thompson, Esq.">
               </div>
               <div>
-                <label for="contact-email" class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Your Email</label>
-                <input type="email" id="contact-email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" placeholder="name@organization.com">
+                <label for="contact-email" class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Your
+                  Email</label>
+                <input type="email" id="contact-email" required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                  placeholder="name@organization.com">
               </div>
               <div>
-                <label for="contact-subject" class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Subject</label>
-                <input type="text" id="contact-subject" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" placeholder="Clinic Deployment / Terminal Systems">
+                <label for="contact-subject"
+                  class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Subject</label>
+                <input type="text" id="contact-subject" required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                  placeholder="Clinic Deployment / Terminal Systems">
               </div>
               <div>
-                <label for="contact-message" class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Message</label>
-                <textarea id="contact-message" rows="4" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors resize-none" placeholder="Tell me about your project, clinic, or inquiry..."></textarea>
+                <label for="contact-message"
+                  class="block text-xs font-mono text-gray-300 uppercase mb-1.5">Message</label>
+                <textarea id="contact-message" rows="4" required
+                  class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  placeholder="Tell me about your project, clinic, or inquiry..."></textarea>
               </div>
-              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg text-sm transition-colors shadow-lg shadow-blue-600/20">
+              <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg text-sm transition-colors shadow-lg shadow-blue-600/20">
                 Send Message →
               </button>
               <div id="form-status" class="hidden text-xs font-mono text-green-400 text-center pt-2"></div>
@@ -960,7 +1267,8 @@
     <footer class="py-8 bg-black border-t border-gray-800 text-gray-400 text-xs">
       <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p>&copy; 2026 Cambrian Minds · Justin Bogner. Built with precision and zero external tracking.</p>
-        <div class="font-mono bg-gray-900 px-3 py-1.5 rounded border border-gray-800 text-gray-300 flex items-center gap-1.5">
+        <div
+          class="font-mono bg-gray-900 px-3 py-1.5 rounded border border-gray-800 text-gray-300 flex items-center gap-1.5">
           <span class="text-green-400">$</span> exit<span class="animate-pulse text-blue-400">_</span>
         </div>
       </div>
@@ -970,4 +1278,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
